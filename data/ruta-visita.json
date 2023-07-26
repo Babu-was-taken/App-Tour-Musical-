@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "nombre": "La Neta Tour",
+        "destino": [1]
+    },
+    {
+
+        "id": 2,
+        "nombre": "Luis Miguel Tour 2023",
+        "destino": [2,3]
+    },
+    {
+
+        "id": 3,
+        "nombre": "Ghost: Re-Imperatour 2023",
+        "destino": [2,3]
+    }
+]

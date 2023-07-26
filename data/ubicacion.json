@@ -1,0 +1,27 @@
+[
+    {
+        "id" : 1,
+        "direccion": "Balcarce 460",
+        "coordenadas": [-34.613072565438195,-58.37043644907444]
+    },
+    {
+        "id" : 2,
+        "direccion": "Humboldt 450",
+        "coordenadas": [-34.59404517758029,-58.44802093558206]
+    },
+    {
+        "id" : 3,
+        "direccion": "Av. Beaucheff, 1204",
+        "coordenadas": [-33.46241550712412, -70.66171133373095]
+    },
+    {
+        "id" : 4,
+        "direccion": "",
+        "coordenadas": []
+    },
+    {
+        "id" : 5,
+        "direccion": "",
+        "coordenadas": []
+    }
+]
