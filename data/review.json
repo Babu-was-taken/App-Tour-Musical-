@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "id_evento": 2,
+        "id_usuario": 1,
+        "calificacion": 2,
+        "comentario": "El show no empezo a tiempo",
+        "animo": "Negativo"
+    },
+    {
+
+        "id": 2,
+        "id_evento": 3,
+        "id_usuario": 1,
+        "calificacion": 5,
+        "comentario": "10/10 el mejor show al que he ido",
+        "animo": "Positivo"
+    },
+    {
+
+        "id": 3,
+        "id_evento": 2,
+        "id_usuario": 2,
+        "calificacion": 5,
+        "comentario": "Estuvo bueno",
+        "animo": "Positivo"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ricardo",
+        "apellido": "Jaquet",
+        "historial_eventos": [2,3]
+    },
+    {
+        "id": 2,
+        "nombre": "Damian",
+        "apellido": "Canonica",
+        "historial_eventos": [2]
+    },
+    {
+        "id": 3,
+        "nombre": "Leandro",
+        "apellido": "Gordillo",
+        "historial_eventos": [1]
+    }
+]

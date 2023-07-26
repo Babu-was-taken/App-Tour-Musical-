@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "nombre": "La Neta Tour",
+        "artista": "Pedro Capo",
+        "genero": "Balada",
+        "id_ubicacion": 1,
+        "hora_inicio": "2023-08-12T20:00:00",
+        "hora_fin": "2023-08-12T23:00:00",
+        "descripcion": "",
+        "imagen": "Pedro_Capo.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Luis Miguel",
+        "artista": "Luis Miguel",
+        "genero": "Pop latino, Bolero, Mariachi",
+        "id_ubicacion": 2,
+        "hora_inicio": "2023-08-03T20:00:00",
+        "hora_fin": "2023-08-03T23:00:00",
+        "descripcion": "",
+        "imagen": "Luis_Miguel.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Ghost: Re-Imperatour 2023",
+        "artista": "Ghost",
+        "genero": "Hard rock, Heavy metal, Doom metal, Rock progresivo, Rock psicodélico, Arena rock",
+        "id_ubicacion": 2,
+        "hora_inicio": "2023-09-24T19:00:00",
+        "hora_fin": "2023-09-24T20:00:00",
+        "descripcion": "",
+        "imagen": "Ghost_Argentina.jpg"
+    }
+]
