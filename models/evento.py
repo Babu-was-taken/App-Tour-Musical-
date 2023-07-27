@@ -1,3 +1,4 @@
+import json
 class Evento:
     def __init__(self,id: int, nombre: str, artista: str, genero: str, id_ubicacion: int, 
     hora_inicio: str, hora_fin: str, descripcion: str, imagen: str ):
@@ -24,7 +25,7 @@ def to_json(self):
 @classmethod
 def from_json(cls, json_data):
     
-    data = json_loads(json_data)
+    data = json.loads(json_data)
     id = data["id"]
     nombre = data["nombre"]
     artista = data["artista"]

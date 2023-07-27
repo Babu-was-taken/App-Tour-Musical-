@@ -1,3 +1,4 @@
+import json
 class Ubicacion:
     def __init__(self, id: int, nombre: str, direccion: str, coordenadas: list[float]):
         self.id = id
@@ -11,7 +12,7 @@ def to_json(self):
 @classmethod
 def from_json(cls, json_data):
     
-    data = json_loads(json_data)
+    data = json.loads(json_data)
     id = data["id"]
     nombre = data["nombre"]
     direccion = data["direccion"]
