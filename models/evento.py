@@ -24,7 +24,7 @@ class Evento:
     def cargar_de_json(cls, archivo):
         with open(archivo, "r") as f:
             data = json.load(f)
-        return [cls(**juego) for juego in data]
+        return [cls(**evento) for evento in data]
         
 """    def to_json(self):
         return {"id": self.id, "nombre": {self.nombre}, "artista": {self.artista}, "genero": {self.genero}, 

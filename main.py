@@ -1,10 +1,12 @@
 from customtkinter import *
+from models.evento import Evento
 from views.vista_inicio import Vista_Inicio
 from views.vista_eventos import Vista_Eventos
 from controllers.controlador_inicio import Controlador_Inicio
 from controllers.controlador_eventos import Controlador_Eventos
+
 set_default_color_theme("dark-blue")
-set
+
 class App(CTk):
     def __init__(self):
         super().__init__()
@@ -20,18 +22,26 @@ class App(CTk):
         self.mainloop()
 
     def inicializar(self):
-        controlador = Controlador_Inicio(self)
-        self.vista_inicio = Vista_Inicio(self, controlador)
+        #Se cargan los eventos
+        eventos = Evento.cargar_de_json("data/evento.json")
+
+        #Se cargan los controladores y se les asigna la lista de eventos
+        self.controlador_inicio = Controlador_Inicio(self)
+        self.controlador_eventos = Controlador_Eventos(self, eventos)
+
+        #Se muestra la pantalla inicial
+        self.vista_inicio = Vista_Inicio(self, self.controlador_inicio)
 
     #Destruye la vista inicial y mustra la vista de eventos
     def mostrar_eventos(self):
         self.vista_inicio.destroy()
 
-        controlador = Controlador_Eventos(self)
-        self.vista_eventos = Vista_Eventos(self, controlador)
-
+        self.vista_eventos = Vista_Eventos(self, self.controlador_eventos)
+        
     def volver_inicio(self):
         self.vista_eventos.destroy()
         self.inicializar()
+
+
 
 App()
