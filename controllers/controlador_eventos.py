@@ -10,9 +10,6 @@ class Controlador_Eventos:
         self.imagenes=[]
         self.cargar_imagenes()
 
-    def volver(self):
-        self.app.volver_inicio()
-
     def obtener_eventos(self):
         return self.eventos
 
