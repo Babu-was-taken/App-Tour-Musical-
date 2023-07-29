@@ -1,27 +1,39 @@
 [
     {
         "id" : 1,
-        "direccion": "Balcarce 460",
-        "coordenadas": [-34.613072565438195,-58.37043644907444]
+        "latitud": -24.7761,
+        "longitud": -65.4093,
+        "direccion": "O'Higgins 575"
     },
     {
         "id" : 2,
-        "direccion": "Humboldt 450",
-        "coordenadas": [-34.59404517758029,-58.44802093558206]
+        "latitud": -24.7778,
+        "longitud": -65.4114,
+        "direccion": "Balcarce 999"
     },
     {
         "id" : 3,
-        "direccion": "Av. Beaucheff, 1204",
-        "coordenadas": [-33.46241550712412, -70.66171133373095]
+        "latitud": -24.7746,
+        "longitud": -65.4117,
+        "direccion": "12 de Octubre 756"
     },
     {
         "id" : 4,
-        "direccion": "",
-        "coordenadas": []
+        "latitud": -24.7763,
+        "longitud": -65.4096,
+        "direccion": "Bartolomé Mitre 1086"
     },
     {
         "id" : 5,
-        "direccion": "",
-        "coordenadas": []
+        "latitud": -24.7750,
+        "longitud": -65.4092,
+        "direccion": "12 de Octubre 581"
+    },
+    {
+        "id" : 6,
+        "latitud": -24.7758,
+        "longitud": -65.4138,
+        "direccion": "O'Higgins 903"
     }
 ]
+

@@ -34,8 +34,7 @@ class Vista_Eventos(CTkScrollableFrame):
         descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion)
 
         #Botones
-        boton_detalles = CTkButton(frame_evento, text="Ver Detalles")
-
+        boton_detalles = CTkButton(frame_evento, text="Ver Detalles", command=self.controlador.ver_detalles)
         #Posición
         nombre_evento.grid(row=0, column=1, padx=5, pady=5)
         foto_evento.grid(row=0, column=0, rowspan=2, padx=5, pady=5)

@@ -7,7 +7,7 @@ class Vista_Explorar(CTkFrame):
         self.controlador = controlador
 
         #Posición en la App
-        self.pack(expand=True, fill="both")
+        self.pack(expand=True, fill="both", padx=2, pady=2)
 
         #Grid Layout
         self.rowconfigure((0,2), weight=1, uniform="a")
@@ -32,5 +32,5 @@ class Vista_Explorar(CTkFrame):
 
     #Posición de widgets
     def posicion_widgets(self):
-        self.boton_volver.grid(row=2, column=0, padx=2, pady=2)
-        self.titulo_eventos.grid(row=0, column=0, padx=2, pady=2)
+        self.boton_volver.grid(row=2, column=0, padx=5, pady=5)
+        self.titulo_eventos.grid(row=0, column=0, padx=5, pady=5)

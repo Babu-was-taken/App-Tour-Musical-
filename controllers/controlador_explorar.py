@@ -5,4 +5,5 @@ class Controlador_Explorar:
         self.app = app
 
     def volver(self):
-        self.app.volver_inicio()
+        self.app.vista_explorar.destroy()
+        self.app.inicializar()
