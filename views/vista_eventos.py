@@ -14,7 +14,7 @@ class Vista_Eventos(CTkScrollableFrame):
 
     #Crea un frame ubicado dentro del frame desplegable con la info 
     #de un evento
-    def crear_vista_para_evento(self, nombre_evento, descripcion, imagen):
+    def crear_vista_para_evento(self, nombre_evento, descripcion, id):
 
         #Frame en el que se mostrará el evento
         frame_evento = CTkFrame(self, fg_color="black")
@@ -30,11 +30,13 @@ class Vista_Eventos(CTkScrollableFrame):
         #Widgets
         #Etiquetas
         nombre_evento = CTkLabel(frame_evento, text=nombre_evento)
-        foto_evento = CTkLabel(frame_evento, image=self.controlador.imagenes[imagen])
-        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion)
+        foto_evento = CTkLabel(frame_evento, image=self.controlador.app.imagenes[id-1])   #Se le resta 1 al id y se lo usa como indice para
+        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion)                   #mostrar la imagen en ese indice de la lista
 
         #Botones
-        boton_detalles = CTkButton(frame_evento, text="Ver Detalles", command=self.controlador.ver_detalles)
+        boton_detalles = CTkButton(frame_evento, text="Ver Detalles", command=lambda: self.controlador.ver_detalles(id))
+
+
         #Posición
         nombre_evento.grid(row=0, column=1, padx=5, pady=5)
         foto_evento.grid(row=0, column=0, rowspan=2, padx=5, pady=5)
@@ -46,7 +48,5 @@ class Vista_Eventos(CTkScrollableFrame):
         eventos = self.controlador.obtener_eventos()
         for evento in eventos:
             print(evento)
-            #Se le resta 1 al id y se lo usa como indice para
-            #mostrar la imagen en ese indice de la lista
-            self.crear_vista_para_evento(evento.nombre, evento.hora_inicio, evento.id-1)
+            self.crear_vista_para_evento(evento.nombre, evento.hora_inicio, evento.id)
             

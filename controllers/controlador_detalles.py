@@ -1,9 +1,9 @@
 from customtkinter import *
-from views.vista_detalles import Vista_Detalles
 
 class Controlador_Detalles:
-    def __init__(self, app):
+    def __init__(self, app, evento_seleccionado):
         self.app = app
+        self.evento_seleccionado = evento_seleccionado
 
     def mostrar_seccion_ubicacion(self):
         self.app.vista_detalles.detalles_frame.destroy()
