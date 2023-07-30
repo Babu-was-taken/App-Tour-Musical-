@@ -39,8 +39,6 @@ class App(CTk):
         self.mainloop()
 
     def inicializar(self):
-
-
         #Se cargan los controladores y se les asigna la lista de eventos
         self.controlador_inicio = Controlador_Inicio(self)
         self.controlador_explorar = Controlador_Explorar(self)
@@ -69,9 +67,9 @@ class App(CTk):
 
     def mostrar_detalles(self):
         self.vista_detalles = Vista_Detalles(self, self.controlador_detalles)
-        self.vista_mapa = Vista_Mapa(self.vista_detalles.ubicacion_frame, self.controlador_mapa)
-        
-        self.vista_detalles.detalles_frame.tkraise()
+    
+    def mostrar_ubicacion(self):
+        self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
 
 
     def seleccionar_evento(self, id):

@@ -5,4 +5,10 @@ class Controlador_Mapa:
         self.app = app
         self.ubicacion_seleccionada = ubicacion_seleccionada
 
+    def mostrar_seccion_detalles(self):
+        self.app.vista_mapa.destroy()
+        self.app.mostrar_detalles()
 
+    def volver(self):
+        self.app.vista_mapa.destroy()
+        self.app.mostrar_explorar()
