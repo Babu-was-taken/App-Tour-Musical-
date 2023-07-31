@@ -1,5 +1,14 @@
 from customtkinter import *
 
+
+#Cambio de los colores de la interfaz visual
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
+
+
 class Vista_Comentarios(CTkFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent)
@@ -12,7 +21,7 @@ class Vista_Comentarios(CTkFrame):
         #Widgets
         self.crear_widgets()
         self.posicion_widgets()
-        
+
         self.agregar_comentarios()
 
     def crear_widgets(self):
@@ -24,10 +33,11 @@ class Vista_Comentarios(CTkFrame):
 
 
         #Etiquetas
-        self.comentarios_titulo = CTkLabel(self.frame_enviar_comentario, text="Deja un comentario", font=("arial", 20))
+        self.comentarios_titulo = CTkLabel(self.frame_enviar_comentario, text="Deja un comentario", font=("Roboto", 15),texto_color=titulo)
 
         #Entrada
-        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario") 
+        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", font=("Open Sans",10),text_color=texto) 
+
 
     def posicion_widgets(self):
         self.frame_enviar_comentario.pack(expand=True, fill="x", padx=2, pady=2)
@@ -47,10 +57,11 @@ class Vista_Comentarios(CTkFrame):
 
         #Widgets
         #Etiquetas
-        comentario_usuario = CTkLabel(frame_comentario, text=usuario)
-        comentario_calificacion = CTkLabel(frame_comentario, text=f"Nota: {calificacion}/5")
-        comentario_animo = CTkLabel(frame_comentario, text=animo)
-        comentario_comentario = CTkLabel(frame_comentario, text=comentario)
+        comentario_usuario = CTkLabel(frame_comentario, text=usuario,font=("Open Sans", 10),texto_color=texto)
+        comentario_calificacion = CTkLabel(frame_comentario, text=f"Nota: {calificacion}/5",font=("Open Sans", 10),texto_color=texto)
+        comentario_animo = CTkLabel(frame_comentario, text=animo,font=("Open Sans", 10),texto_color=texto)
+        comentario_comentario = CTkLabel(frame_comentario, text=comentario,font=("Open Sans", 10),texto_color=texto)
+
 
         #Posición
         comentario_usuario.grid(row=0, column=0, sticky="w", padx=5, pady=5)

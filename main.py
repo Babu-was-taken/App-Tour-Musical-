@@ -12,11 +12,10 @@ from controllers.controlador_explorar import Controlador_Explorar
 from controllers.controlador_eventos import Controlador_Eventos
 from controllers.controlador_detalles import Controlador_Detalles
 from controllers.controlador_mapa import Controlador_Mapa
-from models.Ubicacion import Ubicacion
+from models.ubicacion import Ubicacion
 from models.review import Review
 from models.usuario import Usuario
 
-set_default_color_theme("dark-blue")
 
 class App(CTk):
     def __init__(self, imagenes=[]):
@@ -26,7 +25,6 @@ class App(CTk):
         self.geometry("700x500")
         self.minsize(600,400)
         self.maxsize(800,600)
-
 
         #Se cargan los eventos y las ubicaciones
         self.eventos = Evento.cargar_de_json("data/evento.json")
@@ -51,7 +49,6 @@ class App(CTk):
         self.controlador_detalles = Controlador_Detalles(self, None)
         self.controlador_mapa = Controlador_Mapa(self, None)
 
-
         #Se muestra la pantalla inicial
         self.mostrar_inicio()
 
@@ -60,7 +57,6 @@ class App(CTk):
         for evento in self.eventos:
             imagen = ImageTk.PhotoImage(Image.open(f"assets/{evento.imagen}").resize((200, 200)))
             self.imagenes.append(imagen)
-
 
     #Mostrar vistas
     def mostrar_inicio(self):
@@ -77,7 +73,6 @@ class App(CTk):
     def mostrar_ubicacion(self):
         self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
 
-
     def seleccionar_evento(self, id):
         for ubicacion, evento in zip(self.ubicaciones, self.eventos):
             if ubicacion.id and evento.id == id:
@@ -88,9 +83,6 @@ class App(CTk):
                
                print(f"ID del evento seleccionado {id}")
                print(self.eventos[id-1].nombre)
-
-
-
 
 App()
 

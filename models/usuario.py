@@ -7,7 +7,7 @@ class Usuario:
         self.apellido = apellido
         self.historial_eventos = historial_eventos
 
-        
+
     @classmethod
     def cargar_de_json(cls, archivo):
         with open(archivo, "r") as f:

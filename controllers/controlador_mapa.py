@@ -11,4 +11,5 @@ class Controlador_Mapa:
 
     def volver(self):
         self.app.vista_mapa.destroy()
+
         self.app.mostrar_explorar()

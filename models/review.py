@@ -12,7 +12,7 @@ class Review:
         self.calificacion = calificacion
         self.comentario = comentario
         self.animo = animo
-        
+
     @classmethod
     def cargar_de_json(cls, archivo):
         with open(archivo, "r") as f:

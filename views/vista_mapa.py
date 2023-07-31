@@ -1,9 +1,17 @@
 from customtkinter import *
 from tkintermapview import TkinterMapView
 
+#Cambio de los colores de la interfaz visual
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
+
 class Vista_Mapa(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color="black")
+        super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
@@ -29,12 +37,13 @@ class Vista_Mapa(CTkFrame):
         self.mapa = TkinterMapView(self.mapa_frame, corner_radius=0)
 
         #Botones
-        self.boton_volver = CTkButton(self, text="Volver", command=self.controlador.volver)
-        self.boton_detalles = CTkButton(self, text="detalles", command=self.controlador.mostrar_seccion_detalles)
-        self.boton_ubicacion = CTkButton(self, text="Ubicación", state="disabled")
+        self.boton_volver = CTkButton(self, text="Volver", command=self.controlador.volver,fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde)
+        self.boton_detalles = CTkButton(self, text="Detalles", command=self.controlador.mostrar_seccion_detalles,fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde)
+        self.boton_ubicacion = CTkButton(self, text="Ubicación", state="disabled",fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde)
 
         #Etiquetas
-        self.ubicacion_etiqueta = CTkLabel(self, text="Ubicación en el mapa", font=("arial", 30, "bold"))
+        self.ubicacion_etiqueta = CTkLabel(self, text="Ubicación en el mapa", text_color= titulo , font=("Roboto", 30, "bold"))
+
 
 
     def posicion_widgets(self):

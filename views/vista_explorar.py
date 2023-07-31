@@ -1,8 +1,16 @@
 from customtkinter import *
 
+#Cambio de los colores de la interfaz visual
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
+
 class Vista_Explorar(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color="black")
+        super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
@@ -22,15 +30,17 @@ class Vista_Explorar(CTkFrame):
     def crear_widgets(self):
         #Botones
         self.boton_volver = CTkButton(self, 
-                                      text="volver", 
-                                      command=self.controlador.volver)
+                                      text="volver",fg_color= boton,font=("Open Sans",15),
+                                      command=self.controlador.volver,text_color= titulo,border_color= borde)
         
         #Etiquetas
         self.titulo_eventos = CTkLabel(self, 
-                                       text="Eventos", 
-                                       font=("arial", 30, "bold"))
+                                       text="Eventos",text_color= titulo, 
+                                       font=("Roboto", 30, "bold"))
+
 
     #Posición de widgets
     def posicion_widgets(self):
         self.boton_volver.grid(row=2, column=0, padx=5, pady=5)
         self.titulo_eventos.grid(row=0, column=0, padx=5, pady=5)
+

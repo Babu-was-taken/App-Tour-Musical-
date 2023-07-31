@@ -13,4 +13,4 @@ class Controlador_Inicio:
         respuesta = askyesno("Confirmar", "¿Seguro que desea salír?")
         if respuesta:
             self.app.destroy()
-    
+

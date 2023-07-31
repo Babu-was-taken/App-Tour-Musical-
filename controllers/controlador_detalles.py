@@ -11,4 +11,6 @@ class Controlador_Detalles:
 
     def volver(self):
         self.app.vista_detalles.destroy()
+
         self.app.mostrar_explorar()
+
