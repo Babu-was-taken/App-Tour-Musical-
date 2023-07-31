@@ -12,7 +12,7 @@ from controllers.controlador_eventos import Controlador_Eventos
 from controllers.controlador_detalles import Controlador_Detalles
 from controllers.controlador_mapa import Controlador_Mapa
 from models.ubicacion import Ubicacion
-set_default_color_theme("dark-blue")
+
 class App(CTk):
     def __init__(self, imagenes=[]):
         super().__init__()

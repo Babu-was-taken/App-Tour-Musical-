@@ -22,13 +22,13 @@ class Vista_Explorar(CTkFrame):
     def crear_widgets(self):
         #Botones
         self.boton_volver = CTkButton(self, 
-                                      text="volver", 
-                                      command=self.controlador.volver)
+                                      text="volver",fg_color="#E6D884",font=("Open Sans",10),
+                                      command=self.controlador.volver,text_color="#2F242C",border_color="#A1A892")
         
         #Etiquetas
         self.titulo_eventos = CTkLabel(self, 
-                                       text="Eventos", 
-                                       font=("arial", 30, "bold"))
+                                       text="Eventos",text_color="#2F242C", 
+                                       font=("Roboto", 30, "bold"))
 
     #Posición de widgets
     def posicion_widgets(self):

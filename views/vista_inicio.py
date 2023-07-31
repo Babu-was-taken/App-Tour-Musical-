@@ -20,10 +20,10 @@ class Vista_Inicio(CTkFrame):
     #Creación de widgets
     def crear_widgets(self):
         self.boton_explorar = CTkButton(master=self, 
-                                        text="Explorar",
+                                        text="Explorar",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892",
                                         command=self.controlador.mostrar_explorar)
         self.boton_salir = CTkButton(master=self, 
-                                     text="Salír",
+                                     text="Salír",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892",
                                      command=self.controlador.salir)
 
     #Posicón de widgets

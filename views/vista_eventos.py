@@ -24,12 +24,12 @@ class Vista_Eventos(CTkScrollableFrame):
         frame_evento.columnconfigure((1), weight=2, uniform="a")
         #Widgets
         #Etiquetas
-        nombre_evento = CTkLabel(frame_evento, text=nombre_evento)
+        nombre_evento = CTkLabel(frame_evento, text=nombre_evento,text_color="#2F242C",font=("Roboto",10))
         foto_evento = CTkLabel(frame_evento, image=self.controlador.app.imagenes[id-1])   #Se le resta 1 al id y se lo usa como indice para
-        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion)                   #mostrar la imagen en ese indice de la lista
+        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion,text_color="#2F242C",font=("Roboto",10))                  #mostrar la imagen en ese indice de la lista
 
         #Botones
-        boton_detalles = CTkButton(frame_evento, text="Ver Detalles", command=lambda: self.controlador.ver_detalles(id))
+        boton_detalles = CTkButton(frame_evento, text="Ver Detalles",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892", command=lambda: self.controlador.ver_detalles(id))
 
 
         #Posición
