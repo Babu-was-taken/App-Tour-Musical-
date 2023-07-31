@@ -30,10 +30,6 @@ class Vista_Detalles(CTkFrame):
         #Grid Layout
         self.interior_frame.rowconfigure((0,1,2,3,4,5,6), weight=1, uniform="a")
         self.interior_frame.columnconfigure((0,1,2,3,4), weight=1, uniform="a")
-#        self.detalles_frame.rowconfigure((0), weight=1, uniform="a")
-#        self.detalles_frame.rowconfigure((1,2,3,4), weight=1, uniform="a")
-#        self.detalles_frame.rowconfigure((5), weight=5, uniform="a")
-#        self.detalles_frame.columnconfigure((0,1,2), weight=1, uniform="a")
 
 
         #Botones
@@ -55,13 +51,10 @@ class Vista_Detalles(CTkFrame):
         self.genero_titulo = CTkLabel(self.interior_frame, text="Género", font=("arial", 20))
         self.genero = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.genero)
 
-
-
-
     #Posición de widgets
     def posicion_widgets(self):
         self.detalles_frame.grid(row=1, column=1, rowspan=7, padx=5, pady=5, sticky="nsew")
-        self.interior_frame.pack(expand=True, fill="x")
+        self.interior_frame.pack(expand=True, fill="x", padx=2, pady=2)
 
         self.boton_volver.grid(row=1, column=0, padx=5, pady=5)
         self.boton_detalles.grid(row=2, column=0, padx=5, pady=5)
@@ -78,27 +71,5 @@ class Vista_Detalles(CTkFrame):
         self.genero_titulo.grid(row=5, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.genero.grid(row=6, column=0, columnspan=5, sticky="w", padx=10, pady=5)
         
-
-
-
-
-"""
-        self.nombre_etiqueta.pack(padx=5, pady=5)
-        self.artista.pack(padx=5, pady=5)
-        self.imagen.pack(anchor="w", padx=5, pady=5)
-        self.fecha_inicio.pack(anchor="ne")
-        self.fecha_fin.pack(anchor="se")
-        self.descripcion.pack(anchor="e")"""
-
-"""
-        self.detalles_etiqueta.grid(row=0, column=1, sticky="nsew", padx=5, pady=5)
-        self.nombre_etiqueta.grid(row=1, column=0, columnspan=2, sticky="w", padx=10, pady=5)
-        self.artista.grid(row=2, column=0, sticky="w", padx=10, pady=5)
-        #self.imagen.grid(row=1, column=0, rowspan=2, columnspan=2, sticky="nsew")
-        self.fecha_inicio.grid(row=1, column=2, padx=5, pady=5)
-        self.fecha_fin.grid(row=2, column=2, padx=5, pady=5)
-        self.genero.grid(row=3, column=0, columnspan=3, sticky="w", padx=10, pady=5)
-        self.descripcion.grid(row=4, column=0, columnspan=3, sticky="w", padx=10, pady=5)
-"""
 
 

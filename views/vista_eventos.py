@@ -45,7 +45,7 @@ class Vista_Eventos(CTkScrollableFrame):
 
     #crea un frame para cada evento
     def agregar_eventos(self):
-        eventos = self.controlador.obtener_eventos()
+        eventos = self.controlador.eventos
         for evento in eventos:
             print(evento)
             self.crear_vista_para_evento(evento.nombre, evento.hora_inicio, evento.id)
