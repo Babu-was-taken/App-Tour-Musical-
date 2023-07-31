@@ -1,5 +1,6 @@
 from customtkinter import *
 
+#Cambio de los colores de la interfaz visual
 boton= "#E6D884"
 borde= "#A1A892"
 frame= "#E5E5E5"

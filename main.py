@@ -5,6 +5,7 @@ from views.vista_inicio import Vista_Inicio
 from views.vista_explorar import Vista_Explorar
 from views.vista_eventos import Vista_Eventos
 from views.vista_detalles import Vista_Detalles
+from views.vista_comentarios import Vista_Comentarios
 from views.vista_mapa import Vista_Mapa
 from controllers.controlador_inicio import Controlador_Inicio
 from controllers.controlador_explorar import Controlador_Explorar
@@ -12,6 +13,10 @@ from controllers.controlador_eventos import Controlador_Eventos
 from controllers.controlador_detalles import Controlador_Detalles
 from controllers.controlador_mapa import Controlador_Mapa
 from models.ubicacion import Ubicacion
+from models.review import Review
+from models.usuario import Usuario
+
+
 
 class App(CTk):
     def __init__(self, imagenes=[]):
@@ -24,14 +29,16 @@ class App(CTk):
         #Se cargan los eventos y las ubicaciones
         self.eventos = Evento.cargar_de_json("data/evento.json")
         self.ubicaciones = Ubicacion.cargar_de_json("data/ubicacion.json")
+        self.comentarios = Review.cargar_de_json("data/review.json")
+        self.usuarios = Usuario.cargar_de_json("data/usuario.json")
         self.imagenes = imagenes
         print(self.ubicaciones)
+
         #Inicializar
         self.inicializar()
         self.cargar_imagenes()
         #Run 
         self.mainloop()
-
     def inicializar(self):
         #Se cargan los controladores y se les asigna la lista de eventos
         self.controlador_inicio = Controlador_Inicio(self)
@@ -55,10 +62,10 @@ class App(CTk):
 
     def mostrar_detalles(self):
         self.vista_detalles = Vista_Detalles(self, self.controlador_detalles)
+        self.vista_comentarios = Vista_Comentarios(self.vista_detalles.detalles_frame, self.controlador_detalles)
 
     def mostrar_ubicacion(self):
         self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
-
 
     def seleccionar_evento(self, id):
         for ubicacion, evento in zip(self.ubicaciones, self.eventos):

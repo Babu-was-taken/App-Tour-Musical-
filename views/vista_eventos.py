@@ -1,5 +1,6 @@
 from customtkinter import *
 
+#Cambio de los colores de la interfaz visual
 boton= "#E6D884"
 borde= "#A1A892"
 frame= "#E5E5E5"
@@ -46,7 +47,7 @@ class Vista_Eventos(CTkScrollableFrame):
         boton_detalles.grid(row=1, column=2, padx=5, pady=5)
     #crea un frame para cada evento
     def agregar_eventos(self):
-        eventos = self.controlador.obtener_eventos()
+        eventos = self.controlador.eventos
         for evento in eventos:
             print(evento)
             self.crear_vista_para_evento(evento.nombre, evento.hora_inicio, evento.id)
