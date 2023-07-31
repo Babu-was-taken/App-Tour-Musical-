@@ -24,8 +24,9 @@ class Vista_Mapa(CTkFrame):
     def crear_widgets(self):
         #Frame que mostrará la ubicación del evento en el mapa
         self.mapa_frame = CTkFrame(self, fg_color="")
-        self.mapa = TkinterMapView(self.mapa_frame, corner_radius=0)
 
+        #Mapa
+        self.mapa = TkinterMapView(self.mapa_frame, corner_radius=0)
 
         #Botones
         self.boton_volver = CTkButton(self, text="Volver", command=self.controlador.volver)
@@ -33,12 +34,12 @@ class Vista_Mapa(CTkFrame):
         self.boton_ubicacion = CTkButton(self, text="Ubicación", state="disabled")
 
         #Etiquetas
-        self.ubicacion_etiqueta = CTkLabel(self, text="Ubicación en el mapa",
-                                           font=("arial", 30, "bold"))
+        self.ubicacion_etiqueta = CTkLabel(self, text="Ubicación en el mapa", font=("arial", 30, "bold"))
 
 
     def posicion_widgets(self):
         self.mapa_frame.grid(row=1, column=1, rowspan=5, sticky="nsew", padx=5, pady=5)
+        
         self.mapa.pack(expand=True, fill="both")
 
         self.ubicacion_etiqueta.grid(row=0, column=1)
