@@ -1,8 +1,14 @@
 from customtkinter import *
 
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
+
 class Vista_Inicio(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color="black")
+        super().__init__(parent, fg_color= frame,border_color= borde)
         self.parent = parent
         self.controlador = controlador
 
@@ -20,10 +26,10 @@ class Vista_Inicio(CTkFrame):
     #Creación de widgets
     def crear_widgets(self):
         self.boton_explorar = CTkButton(master=self, 
-                                        text="Explorar",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892",
+                                        text="Explorar",fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde,
                                         command=self.controlador.mostrar_explorar)
         self.boton_salir = CTkButton(master=self, 
-                                     text="Salír",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892",
+                                     text="Salír",fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde,
                                      command=self.controlador.salir)
 
     #Posicón de widgets

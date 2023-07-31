@@ -1,4 +1,11 @@
 from customtkinter import *
+
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
+
 class Vista_Eventos(CTkScrollableFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent)
@@ -14,7 +21,7 @@ class Vista_Eventos(CTkScrollableFrame):
     def crear_vista_para_evento(self, nombre_evento, descripcion, id):
 
         #Frame en el que se mostrará el evento
-        frame_evento = CTkFrame(self, fg_color="black")
+        frame_evento = CTkFrame(self, fg_color= frame,border_color= borde)
         
         #Posición que tomará en el frame desplegable
         frame_evento.pack(expand=True, fill="both", padx=2, pady=2)
@@ -24,12 +31,12 @@ class Vista_Eventos(CTkScrollableFrame):
         frame_evento.columnconfigure((1), weight=2, uniform="a")
         #Widgets
         #Etiquetas
-        nombre_evento = CTkLabel(frame_evento, text=nombre_evento,text_color="#2F242C",font=("Roboto",10))
+        nombre_evento = CTkLabel(frame_evento, text=nombre_evento,text_color= titulo,font=("Roboto",20))
         foto_evento = CTkLabel(frame_evento, image=self.controlador.app.imagenes[id-1])   #Se le resta 1 al id y se lo usa como indice para
-        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion,text_color="#2F242C",font=("Roboto",10))                  #mostrar la imagen en ese indice de la lista
+        descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion,text_color= titulo,font=("Roboto",20))                  #mostrar la imagen en ese indice de la lista
 
         #Botones
-        boton_detalles = CTkButton(frame_evento, text="Ver Detalles",fg_color="#E6D884",font=("Open Sans",10),text_color="#2F242C",border_color="#A1A892", command=lambda: self.controlador.ver_detalles(id))
+        boton_detalles = CTkButton(frame_evento, text="Ver Detalles",fg_color= boton,font=("Open Sans",15),text_color= titulo,border_color= borde, command=lambda: self.controlador.ver_detalles(id))
 
 
         #Posición

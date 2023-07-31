@@ -1,9 +1,14 @@
 from customtkinter import *
 
+boton= "#E6D884"
+borde= "#A1A892"
+frame= "#E5E5E5"
+titulo= "#2F242C"
+texto= "#E6D884"
 
 class Vista_Detalles(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color="black")
+        super().__init__(parent, fg_color= frame,border_color= borde)
         self.parent = parent
         self.controlador = controlador
 
@@ -24,7 +29,7 @@ class Vista_Detalles(CTkFrame):
         #Frames
         #Frame desplegable en el que se mostrarán los detalles del evento
         self.detalles_frame = CTkScrollableFrame(self)
-        self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color="black")
+        self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color= "#A1A892")
 
 
         #Grid Layout
@@ -38,22 +43,22 @@ class Vista_Detalles(CTkFrame):
 
         #Botones
         self.boton_volver = CTkButton(self, text="Volver",
-                                      command=self.controlador.volver,fg_color="#E6D884",text_color="#2F242C",font="Open Sans",border_color="#A1A892")
-        self.boton_detalles = CTkButton(self, text="detalles", state="disabled",fg_color="#E6D884",text_color="#2F242C",font="Open Sans",border_color="#A1A892")
+                                      command=self.controlador.volver,fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
+        self.boton_detalles = CTkButton(self, text="Detalles", state="disabled",fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
         self.boton_ubicacion = CTkButton(self, text="Ubicación",
-                                         command=self.controlador.mostrar_seccion_ubicacion,fg_color="#E6D884",text_color="#2F242C",font="Open Sans",border_color="#A1A892")
+                                         command=self.controlador.mostrar_seccion_ubicacion,fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
         
         #Etiquetas
-        self.detalles_etiqueta = CTkLabel(self, text="Detalles", font=("Roboto", 30, "bold"),text_color="#2F242C")
-        self.nombre_etiqueta = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.nombre, font=("Roboto", 20))
-        self.artista = CTkLabel(self.interior_frame, text=f"Artista: {self.controlador.evento_seleccionado.artista}",font=("Roboto",20),text_color="#2F242C")
+        self.detalles_etiqueta = CTkLabel(self, text="Detalles", font=("Roboto", 30, "bold"),text_color= titulo)
+        self.nombre_etiqueta = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.nombre, font=("Roboto", 20),text_color= titulo)
+        self.artista = CTkLabel(self.interior_frame, text=f"Artista: {self.controlador.evento_seleccionado.artista}",font=("Roboto",15),text_color= texto)
         self.imagen = CTkLabel(self.interior_frame, image=self.parent.imagenes[self.controlador.evento_seleccionado.id-1])
-        self.fecha_inicio = CTkLabel(self.interior_frame, text=f"Desde: {self.controlador.evento_seleccionado.hora_inicio}",font=("Roboto",20),text_color="#2F242C")
-        self.fecha_fin = CTkLabel(self.interior_frame, text=f"Hasta: {self.controlador.evento_seleccionado.hora_fin}",font=("Roboto",20),text_color="#2F242C")
-        self.descripbion_titulo = CTkLabel(self.interior_frame, text="Descripción", font=("Roboto", 20),text_color="#2F242C")
-        self.descripcion = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.descripcion,font=("Open Sans",20),text_color="#E5E5E5")
-        self.genero_titulo = CTkLabel(self.interior_frame, text="Género", font=("roboto", 20), text_color="#2F242C")
-        self.genero = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.genero,font=("Open Sans",20),text_color="#E5E5E5")
+        self.fecha_inicio = CTkLabel(self.interior_frame, text=f"Desde: {self.controlador.evento_seleccionado.hora_inicio}",font=("Roboto",15),text_color= texto)
+        self.fecha_fin = CTkLabel(self.interior_frame, text=f"Hasta: {self.controlador.evento_seleccionado.hora_fin}",font=("Roboto",15),text_color= texto)
+        self.descripbion_titulo = CTkLabel(self.interior_frame, text="Descripción", font=("Roboto", 20),text_color= titulo)
+        self.descripcion = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.descripcion,font=("Open Sans",15),text_color= texto)
+        self.genero_titulo = CTkLabel(self.interior_frame, text="Género", font=("Roboto", 20), text_color= titulo)
+        self.genero = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.genero,font=("Open Sans",15),text_color= texto)
 
 
 
