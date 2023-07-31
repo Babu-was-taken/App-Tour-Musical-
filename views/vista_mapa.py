@@ -11,6 +11,7 @@ texto= "#E6D884"
 class Vista_Mapa(CTkFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
@@ -42,6 +43,7 @@ class Vista_Mapa(CTkFrame):
 
         #Etiquetas
         self.ubicacion_etiqueta = CTkLabel(self, text="Ubicación en el mapa", text_color= titulo , font=("Roboto", 30, "bold"))
+
 
 
     def posicion_widgets(self):

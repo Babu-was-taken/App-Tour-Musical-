@@ -1,4 +1,5 @@
 from customtkinter import *
+
 class Controlador_Mapa:
     def __init__(self, app, ubicacion_seleccionada):
         self.app = app
@@ -10,4 +11,5 @@ class Controlador_Mapa:
 
     def volver(self):
         self.app.vista_mapa.destroy()
+
         self.app.mostrar_explorar()

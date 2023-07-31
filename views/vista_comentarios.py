@@ -1,11 +1,13 @@
 from customtkinter import *
 
+
 #Cambio de los colores de la interfaz visual
 boton= "#E6D884"
 borde= "#A1A892"
 frame= "#E5E5E5"
 titulo= "#2F242C"
 texto= "#E6D884"
+
 
 class Vista_Comentarios(CTkFrame):
     def __init__(self, parent, controlador):
@@ -36,6 +38,7 @@ class Vista_Comentarios(CTkFrame):
         #Entrada
         self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", font=("Open Sans",10),text_color=texto) 
 
+
     def posicion_widgets(self):
         self.frame_enviar_comentario.pack(expand=True, fill="x", padx=2, pady=2)
 
@@ -59,6 +62,7 @@ class Vista_Comentarios(CTkFrame):
         comentario_animo = CTkLabel(frame_comentario, text=animo,font=("Open Sans", 10),texto_color=texto)
         comentario_comentario = CTkLabel(frame_comentario, text=comentario,font=("Open Sans", 10),texto_color=texto)
 
+
         #Posición
         comentario_usuario.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         comentario_calificacion.grid(row=1, column=0, sticky="w", padx=5, pady=5)
@@ -76,3 +80,4 @@ class Vista_Comentarios(CTkFrame):
                 for usuario in usuarios:
                     if usuario.id == comentario.id_usuario:
                         self.crear_vista_de_comentario(usuario.nombre, comentario.calificacion, comentario.animo, comentario.comentario)
+

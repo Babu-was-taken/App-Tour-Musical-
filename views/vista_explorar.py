@@ -10,6 +10,7 @@ texto= "#E6D884"
 class Vista_Explorar(CTkFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
@@ -37,7 +38,9 @@ class Vista_Explorar(CTkFrame):
                                        text="Eventos",text_color= titulo, 
                                        font=("Roboto", 30, "bold"))
 
+
     #Posición de widgets
     def posicion_widgets(self):
         self.boton_volver.grid(row=2, column=0, padx=5, pady=5)
         self.titulo_eventos.grid(row=0, column=0, padx=5, pady=5)
+

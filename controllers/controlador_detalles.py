@@ -1,4 +1,5 @@
 from customtkinter import *
+
 class Controlador_Detalles:
     def __init__(self, app, evento_seleccionado):
         self.app = app
@@ -10,4 +11,6 @@ class Controlador_Detalles:
 
     def volver(self):
         self.app.vista_detalles.destroy()
+
         self.app.mostrar_explorar()
+

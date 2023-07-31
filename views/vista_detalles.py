@@ -10,6 +10,7 @@ texto= "#E6D884"
 class Vista_Detalles(CTkFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
@@ -31,6 +32,7 @@ class Vista_Detalles(CTkFrame):
         #Frame desplegable en el que se mostrarán los detalles del evento
         self.detalles_frame = CTkScrollableFrame(self)
         self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color= "#A1A892")
+
 
 
         #Grid Layout
@@ -56,7 +58,6 @@ class Vista_Detalles(CTkFrame):
         self.genero_titulo = CTkLabel(self.interior_frame, text="Género", font=("Roboto", 20), text_color= titulo)
         self.genero = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.genero,font=("Open Sans",15),text_color= texto)
 
-
     #Posición de widgets
     def posicion_widgets(self):
         self.detalles_frame.grid(row=1, column=1, rowspan=7, padx=5, pady=5, sticky="nsew")
@@ -65,6 +66,7 @@ class Vista_Detalles(CTkFrame):
         self.boton_volver.grid(row=1, column=0, padx=5, pady=5)
         self.boton_detalles.grid(row=2, column=0, padx=5, pady=5)
         self.boton_ubicacion.grid(row=3, column=0, padx=5, pady=5)
+
         self.detalles_etiqueta.grid(row=0, column=1, padx=5, pady=5)
         self.nombre_etiqueta.grid(row=0, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.artista.grid(row=1, column=2, columnspan=2, sticky="w", padx=5, pady=5)
@@ -75,3 +77,4 @@ class Vista_Detalles(CTkFrame):
         self.descripcion.grid(row=4, column=0, columnspan=5, sticky="w", padx=10, pady=5)
         self.genero_titulo.grid(row=5, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.genero.grid(row=6, column=0, columnspan=5, sticky="w", padx=10, pady=5)
+

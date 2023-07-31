@@ -17,7 +17,6 @@ from models.review import Review
 from models.usuario import Usuario
 
 
-
 class App(CTk):
     def __init__(self, imagenes=[]):
         super().__init__()
@@ -26,6 +25,7 @@ class App(CTk):
         self.geometry("700x500")
         self.minsize(600,400)
         self.maxsize(800,600)
+
         #Se cargan los eventos y las ubicaciones
         self.eventos = Evento.cargar_de_json("data/evento.json")
         self.ubicaciones = Ubicacion.cargar_de_json("data/ubicacion.json")
@@ -37,8 +37,10 @@ class App(CTk):
         #Inicializar
         self.inicializar()
         self.cargar_imagenes()
+
         #Run 
         self.mainloop()
+
     def inicializar(self):
         #Se cargan los controladores y se les asigna la lista de eventos
         self.controlador_inicio = Controlador_Inicio(self)
@@ -46,16 +48,20 @@ class App(CTk):
         self.Controlador_eventos = Controlador_Eventos(self, self.eventos)
         self.controlador_detalles = Controlador_Detalles(self, None)
         self.controlador_mapa = Controlador_Mapa(self, None)
+
         #Se muestra la pantalla inicial
         self.mostrar_inicio()
+
     #Añade las imagenes a la lista
     def cargar_imagenes(self):
         for evento in self.eventos:
             imagen = ImageTk.PhotoImage(Image.open(f"assets/{evento.imagen}").resize((200, 200)))
             self.imagenes.append(imagen)
+
     #Mostrar vistas
     def mostrar_inicio(self):
         self.vista_inicio = Vista_Inicio(self, self.controlador_inicio)
+
     def mostrar_explorar(self):
         self.vista_explorar = Vista_Explorar(self, self.controlador_explorar)
         self.vista_eventos = Vista_Eventos(self.vista_explorar, self.Controlador_eventos)
@@ -77,4 +83,6 @@ class App(CTk):
                
                print(f"ID del evento seleccionado {id}")
                print(self.eventos[id-1].nombre)
+
 App()
+

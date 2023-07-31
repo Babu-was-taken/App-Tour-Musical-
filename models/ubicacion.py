@@ -15,5 +15,4 @@ class Ubicacion:
         with open(archivo, "r") as f:
             data = json.load(f)
         return [cls(**ubicacion) for ubicacion in data]
-    
-    
+

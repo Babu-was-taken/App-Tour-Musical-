@@ -10,6 +10,7 @@ texto= "#E6D884"
 class Vista_Inicio(CTkFrame):
     def __init__(self, parent, controlador):
         super().__init__(parent, fg_color= frame,border_color= borde)
+
         self.parent = parent
         self.controlador = controlador
 
