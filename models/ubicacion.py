@@ -1,20 +1,19 @@
-class Ubicacion:
-    def __init__(self, id: int, nombre: str, direccion: str, coordenadas: list[float]):
-        self.id = id
-        self.nombre = nombre
-        self.direccion = direccion
-        self.coordenadas = coordenadas
-        
-def to_json(self):
-    return {"id": self.id, "nombre": {self.nombre}, "direccion": {self.direccion}, "coordenadas": {self.coordenadas}}
+import json
 
-@classmethod
-def from_json(cls, json_data):
+
+class Ubicacion:
+    def __init__(self, id: int, direccion: str, 
+                 latitud: float, longitud: float ):
+        
+        self.id = id
+        self.direccion = direccion
+        self.latitud = latitud
+        self.longitud = longitud
+
+    @classmethod
+    def cargar_de_json(cls, archivo):
+        with open(archivo, "r") as f:
+            data = json.load(f)
+        return [cls(**ubicacion) for ubicacion in data]
     
-    data = json_loads(json_data)
-    id = data["id"]
-    nombre = data["nombre"]
-    direccion = data["direccion"]
-    coordenadas = data["coordenadas"]
     
-    return cls(id, nombre, direccion, coordenadas)
