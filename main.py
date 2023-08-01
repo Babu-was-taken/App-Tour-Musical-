@@ -70,6 +70,12 @@ class App(CTk):
 
     def mostrar_explorar(self):
         self.vista_explorar = Vista_Explorar(self, self.controlador_explorar)
+
+    def mostrar_eventos(self):
+        self.vista_eventos = Vista_Eventos(self.vista_explorar, self.Controlador_eventos)
+        self.vista_eventos.agregar_eventos()
+
+    def mostrar_eventos_filtrados(self):
         self.vista_eventos = Vista_Eventos(self.vista_explorar, self.Controlador_eventos)
 
     def mostrar_detalles(self):
@@ -80,6 +86,7 @@ class App(CTk):
 
     def mostrar_ubicacion(self):
         self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
+
 
     def seleccionar_evento(self, id):
         for ubicacion, evento in zip(self.ubicaciones, self.eventos):

@@ -20,19 +20,19 @@ class Vista_Login(CTkFrame):
 
     def crear_widgets(self):
         #Etiquetas
-        self.bienvenido_etiqueta = CTkLabel(self, text="Bienvenido", font=("Open Sans", 30))
+        self.bienvenido_etiqueta = CTkLabel(self, text="Bienvenido", font=("Open Sans", 25))
 
         #Boton
         self.iniciar_sesion_boton = CTkButton(self, height=40, 
                                               text="Iniciar Sesión", 
-                                              font=("Open Sans", 15),
+                                              font=("Open Sans", 20),
                                               command=lambda: 
                                               self.controlador.iniciar_sesion(self.entrada_nombre.get(),
                                                                               self.entrada_apellido.get()))
 
         #Entradas
-        self.entrada_nombre = CTkEntry(self, width=220, height=40, placeholder_text="Nombre")
-        self.entrada_apellido = CTkEntry(self, width=220, height=40, placeholder_text="Apellido")
+        self.entrada_nombre = CTkEntry(self, width=220, height=35, placeholder_text="Nombre")
+        self.entrada_apellido = CTkEntry(self, width=220, height=35, placeholder_text="Apellido")
 
     def posicion_widgets(self):
         self.bienvenido_etiqueta.grid(row=1)

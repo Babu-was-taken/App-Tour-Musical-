@@ -13,6 +13,7 @@ class Controlador_Detalles:
     def volver(self):
         self.app.vista_detalles.destroy()
         self.app.mostrar_explorar()
+        self.app.mostrar_eventos()
 
     #Crea un objeto de la clase Review y lo agrega a la lista de comentarios
     def enviar_comentario(self, nota, animo, comentario):

@@ -35,9 +35,9 @@ class Vista_Comentarios(CTkFrame):
         self.animo_var = StringVar(value="Positivo")
         self.animo_var.set("Positivo")
 
-        #Combobox
-        self.nota_combobox = CTkOptionMenu(self.frame_enviar_comentario, values=["1", "2", "3", "4", "5"], variable=self.nota_var)
-        self.animo_combobox = CTkOptionMenu(self.frame_enviar_comentario, values=["Positivo", "Negativo"], variable=self.animo_var)
+        #Option Menu
+        self.nota_option = CTkOptionMenu(self.frame_enviar_comentario, values=["1", "2", "3", "4", "5"], variable=self.nota_var)
+        self.animo_option = CTkOptionMenu(self.frame_enviar_comentario, values=["Positivo", "Negativo"], variable=self.animo_var)
 
         #Botones
         self.boton_enviar_comentario = CTkButton(self.frame_enviar_comentario, 
@@ -56,16 +56,12 @@ class Vista_Comentarios(CTkFrame):
 
     def posicion_widgets(self):
         self.frame_enviar_comentario.pack(expand=True, fill="x", padx=2, pady=2)
-
-        self.nota_combobox.grid(row=2, column=0, padx=5, pady=5)
-        self.animo_combobox.grid(row=2, column=1, padx=5, pady=5)
-
+        self.nota_option.grid(row=2, column=0, padx=5, pady=5)
+        self.animo_option.grid(row=2, column=1, padx=5, pady=5)
         self.boton_enviar_comentario.grid(row=3, column=3, padx=5, pady=5)
-
         self.comentarios_titulo.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         self.nota_etiqueta.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.animo_etiqueta.grid(row=1, column=1, sticky="w", padx=5, pady=5)
-
         self.entrada_comentario.grid(row=3, column=0, columnspan=2, sticky="w", padx=5, pady=5)
 
 

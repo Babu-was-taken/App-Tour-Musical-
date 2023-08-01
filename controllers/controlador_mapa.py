@@ -7,7 +7,9 @@ class Controlador_Mapa:
     def mostrar_seccion_detalles(self):
         self.app.vista_mapa.destroy()
         self.app.mostrar_detalles()
+        self.app.mostrar_comentarios()
 
     def volver(self):
         self.app.vista_mapa.destroy()
         self.app.mostrar_explorar()
+        self.app.mostrar_eventos()

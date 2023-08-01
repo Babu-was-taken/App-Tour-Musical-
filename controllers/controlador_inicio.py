@@ -8,6 +8,7 @@ class Controlador_Inicio:
     def mostrar_explorar(self):
         self.app.vista_inicio.destroy()
         self.app.mostrar_explorar()
+        self.app.mostrar_eventos()
 
     def salir(self):
         respuesta = askyesno("Confirmar", "¿Seguro que desea salír?")
