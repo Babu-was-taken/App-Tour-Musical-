@@ -29,7 +29,7 @@ class Vista_Login(CTkFrame):
 
     def crear_widgets(self):
         #Frame en el que aparecerán los widgets
-        self.frame_interior = CTkFrame(self, height=100)
+        self.frame_interior = CTkFrame(self, height=100,fg_color=cuerpo_color)
         #Grid Layout del frame interior
         self.frame_interior.rowconfigure((0,1,2,3,4,5), weight=1, uniform="a")
         self.frame_interior.columnconfigure((0), weight=1, uniform="a")
