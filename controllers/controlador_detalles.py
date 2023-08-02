@@ -15,6 +15,10 @@ class Controlador_Detalles:
         self.app.mostrar_explorar()
         self.app.mostrar_eventos()
 
+    def ver_perfil(self, id):
+        self.app.seleccionar_usuario(id)
+        self.app.mostrar_usuario()
+
     #Crea un objeto de la clase Review y lo agrega a la lista de comentarios
     def enviar_comentario(self, nota, animo, comentario):
         nuevo_comentario = {"id": self.app.comentarios[0].id-1, 

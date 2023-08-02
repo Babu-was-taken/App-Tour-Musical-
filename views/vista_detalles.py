@@ -52,6 +52,7 @@ class Vista_Detalles(CTkFrame):
         self.boton_volver = CTkButton(self, text="Volver", 
                                      fg_color=cuerpo_color,
                                      border_color=contenedor_color,
+                                     hover_color=borde_color,
                                      text_color= titulo_color,
                                         font=("Open Sans",20), 
                                         command=self.controlador.volver)
@@ -64,10 +65,13 @@ class Vista_Detalles(CTkFrame):
         self.boton_ubicacion = CTkButton(self, text="Ubicación", 
                                      fg_color=cuerpo_color,
                                      border_color=contenedor_color,
+                                     hover_color=borde_color,
                                      text_color= titulo_color,
                                          font=("Open Sans",20),
                                          command=self.controlador.mostrar_seccion_ubicacion)
-        self.boton_compartir = CTkButton(self.interior_frame, width=15, corner_radius=50, fg_color="transparent", text="", image=self.twitter_img)
+        self.boton_compartir = CTkButton(self.interior_frame, width=15, corner_radius=50, 
+                                         fg_color="transparent", text="", hover_color=borde_color, 
+                                         image=self.twitter_img)
         
         #Etiquetas
         self.detalles_etiqueta = CTkLabel(self, text="Detalles", 

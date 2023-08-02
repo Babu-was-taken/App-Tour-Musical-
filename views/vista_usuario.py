@@ -16,12 +16,14 @@ class Vista_Usuario(CTkToplevel):
         self.parent = parent
         self.controlador = controlador
 
+        self.title("Detalles de Usuario")
         self.geometry("600x400+400+100")
-        self.focus()
 
 
         self.frame = CTkFrame(self,fg_color=contenedor_color)
         self.frame.pack(expand=True, fill="both")
+
+        self.protocol("WM_DELETE_WINDOW", self.controlador.quitar_boton_exit)
 
         #Grid Layout
         self.frame.rowconfigure((0,1,2,3), weight=1, uniform="a")
@@ -44,7 +46,6 @@ class Vista_Usuario(CTkToplevel):
         self.eventos_asistidos_etiqueta = CTkLabel(self.frame, text="Eventos asistidos:", font=("Roboto",20),text_color=titulo_color)
 
         #Botones
-        self.boton_añadir = CTkButton(self.frame, width=100, text="Añadir", font=("Open Sans",15), fg_color=cuerpo_color, border_color=contenedor_color, text_color= titulo_color)
         self.boton_cerrar = CTkButton(self.frame, width=100, text="Cerrar", font=("Open Sans",15),fg_color=cuerpo_color, border_color=contenedor_color, text_color= titulo_color, command=self.controlador.cerrar)
 
     def posicion_widgets(self):
@@ -53,8 +54,7 @@ class Vista_Usuario(CTkToplevel):
         self.nombre_etiqueta.grid(row=1, column=1, columnspan=2, sticky="w", padx=10, pady=5)
         self.apellido_etiqueta.grid(row=2, column=1, columnspan=2, sticky="w", padx=10, pady=5)
         self.eventos_asistidos_etiqueta.grid(row=3, column=1, columnspan=2, sticky="w", padx=10, pady=5)
-        self.boton_añadir.grid(row=1, column=0, sticky="w", padx=10, pady=5)
-        self.boton_cerrar.grid(row=2, column=0, sticky="w", padx=10, pady=5)
+        self.boton_cerrar.grid(row=0, column=0, sticky="w", padx=10, pady=5)
 
 
     def crear_vista_historial(self, nombre):
@@ -71,6 +71,3 @@ class Vista_Usuario(CTkToplevel):
         if eventos_asistidos == []:
             self.etiqueta = CTkLabel(self.frame_historial, text="Aún no se asistió a ningún evento")
             self.etiqueta.pack()
-
-
-        

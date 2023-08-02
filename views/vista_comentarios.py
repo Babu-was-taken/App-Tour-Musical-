@@ -76,7 +76,7 @@ class Vista_Comentarios(CTkFrame):
         self.animo_etiqueta = CTkLabel(self.frame_enviar_comentario, text="Ánimo", text_color=texto_color, font=("Roboto", 15))
 
         #Entrada
-        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", text_color="black", font=("Open Sans",15)) 
+        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", text_color=texto_color, font=("Open Sans",15)) 
 
     def posicion_widgets(self):
         self.frame_enviar_comentario.pack(expand=True, fill="x", padx=2, pady=2)
@@ -90,7 +90,7 @@ class Vista_Comentarios(CTkFrame):
 
 
     #Crea un frame que contenga un comentario
-    def crear_vista_de_comentario(self, usuario, calificacion, animo, comentario):
+    def crear_vista_de_comentario(self, usuario, calificacion, animo, comentario, id):
         frame_comentario = CTkFrame(self, fg_color=cuerpo_color)
         frame_comentario.pack(expand=True, fill="x", padx=2, pady=2)
 
@@ -99,6 +99,11 @@ class Vista_Comentarios(CTkFrame):
         frame_comentario.columnconfigure((0,1,2), weight=1, uniform="a")
 
         #Widgets
+        #Botón
+        boton_ver_perfil = CTkButton(frame_comentario, text="Ver Perfil", fg_color=cuerpo_color,
+                                     hover_color=borde_color, text_color= titulo_color, font=("Open Sans", 15),
+                                     command=lambda: self.controlador.ver_perfil(id))
+
         #Etiquetas
         comentario_usuario = CTkLabel(frame_comentario, text=usuario, text_color=titulo_color, font=("Open Sans", 15))
         comentario_calificacion = CTkLabel(frame_comentario, text=f"Nota: {calificacion}/5", text_color=texto_color, font=("Open Sans", 15))
@@ -106,6 +111,7 @@ class Vista_Comentarios(CTkFrame):
         comentario_comentario = CTkLabel(frame_comentario, text=comentario, text_color=texto_color, font=("Open Sans", 15))
 
         #Posición
+        boton_ver_perfil.grid(row=2, column=2, sticky="e", padx=5, pady=5)
         comentario_usuario.grid(row=0, column=0, sticky="w", padx=5, pady=5)
         comentario_calificacion.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         comentario_animo.grid(row=1, column=0, sticky="e", padx=5, pady=5)
@@ -121,4 +127,4 @@ class Vista_Comentarios(CTkFrame):
             if comentario.id_evento == self.controlador.evento_seleccionado.id:
                 for usuario in usuarios:
                     if usuario.id == comentario.id_usuario:
-                        self.crear_vista_de_comentario(usuario.nombre, comentario.calificacion, comentario.animo, comentario.comentario)
+                        self.crear_vista_de_comentario(usuario.nombre, comentario.calificacion, comentario.animo, comentario.comentario, usuario.id)

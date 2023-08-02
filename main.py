@@ -29,6 +29,7 @@ class App(CTk):
         self.geometry("700x500+500+200")
         self.minsize(600,400)
         self.maxsize(800,600)
+
         #Se cargan los eventos y las ubicaciones
         self.eventos = Evento.cargar_de_json("data/evento.json")
         self.ubicaciones = Ubicacion.cargar_de_json("data/ubicacion.json")
@@ -49,9 +50,10 @@ class App(CTk):
         self.controlador_login = Controlador_login(self)
         self.controlador_explorar = Controlador_Explorar(self)
         self.Controlador_eventos = Controlador_Eventos(self, self.eventos)
-        self.controlador_detalles = Controlador_Detalles(self, None)
-        self.controlador_mapa = Controlador_Mapa(self, None)
-        self.controlador_usuario = Controlador_usuario(self, None)
+        self.controlador_detalles = None
+        self.controlador_mapa = None
+        self.controlador_usuario = None
+        self.vista_usuario = None
 
         #Se muestra la pantalla inicial
         self.mostrar_login()
@@ -63,6 +65,8 @@ class App(CTk):
             imagen = ImageTk.PhotoImage(Image.open(f"assets/{evento.imagen}").resize((200, 200)))
             self.imagenes.append(imagen)
 
+    def cargar_fondo(self, fondo):
+        return CTkImage(Image.open(f"assets/{fondo}"), size=(700, 500))
 
     #Mostrar vistas
     def mostrar_inicio(self):
@@ -91,8 +95,10 @@ class App(CTk):
         self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
 
     def mostrar_usuario(self):
-        self.vista_usuario = Vista_Usuario(self, self.controlador_usuario)
-
+        if self.vista_usuario is None:
+            self.vista_usuario = Vista_Usuario(self, self.controlador_usuario)  # Si es None crea la ventana
+        else:
+            self.vista_usuario.focus()
 
     def seleccionar_evento(self, id):
         for ubicacion, evento in zip(self.ubicaciones, self.eventos):
