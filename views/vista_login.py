@@ -18,6 +18,9 @@ class Vista_Login(CTkFrame):
         #Posición que tendrá en la App
         self.pack(expan=True, fill="both", padx=2, pady=2)
 
+        #Grid Layout
+        self.columnconfigure((0,1,2), weight=1, uniform="a")
+
         #Widgets
         self.crear_widgets()
         self.posicion_widgets()
@@ -47,12 +50,12 @@ class Vista_Login(CTkFrame):
 
         #Entradas
         self.fondo = CTkLabel(self, image=self.parent.cargar_fondo("fondo_3.jpg"))
-        self.entrada_nombre = CTkEntry(self.frame_interior, width=150, height=30, placeholder_text="Nombre")
-        self.entrada_apellido = CTkEntry(self.frame_interior, width=150, height=30, placeholder_text="Apellido")
+        self.entrada_nombre = CTkEntry(self.frame_interior, width=200, height=30, placeholder_text="Nombre")
+        self.entrada_apellido = CTkEntry(self.frame_interior, width=200, height=30, placeholder_text="Apellido")
 
     def posicion_widgets(self):
-        self.frame_interior.grid(row=0, sticky="ns", padx=2, pady=20)
-        self.fondo.grid(row=0, padx=2, pady=2)
+        self.frame_interior.grid(row=0, column=1, sticky="nsew", padx=2, pady=20)
+        self.fondo.grid(row=0, column=0, columnspan=3, padx=2, pady=2)
         self.bienvenido_etiqueta.grid(row=1, column=0, padx=5, pady=5)
         self.entrada_nombre.grid(row=2, column=0, padx=5, pady=5)
         self.entrada_apellido.grid(row=3, column=0, padx=5, pady=5)

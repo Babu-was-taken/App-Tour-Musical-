@@ -1,4 +1,6 @@
 from customtkinter import *
+import webbrowser
+import urllib.parse
 from models.review import Review
 
 class Controlador_Detalles:
@@ -18,6 +20,15 @@ class Controlador_Detalles:
     def ver_perfil(self, id):
         self.app.seleccionar_usuario(id)
         self.app.mostrar_usuario()
+
+    def compartir(self):
+        message = "Hey, échale un vistazo a este evento! :)"
+        url= "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+        message = urllib.parse.quote(message)
+        url = urllib.parse.quote(url)
+        share_url = f"https://twitter.com/intent/tweet?text={message}&url={url}"
+        webbrowser.open_new_tab(share_url)
+
 
     #Crea un objeto de la clase Review y lo agrega a la lista de comentarios
     def enviar_comentario(self, nota, animo, comentario):
