@@ -1,13 +1,6 @@
 from customtkinter import *
 from PIL import Image, ImageTk
 
-#Cambio de los colores de la interfaz visual
-#boton= "#E6D884"
-#borde= "#A1A892"
-#frame= "#E5E5E5"
-#titulo= "#2F242C"
-#texto= "#E6D884"
-
 principal = "#52A5E0"
 titulo_color = "#EFF3F5"        #Se suele usar para los titulos y el texto en los botones
 texto_color = "#C8CDD0"         #Para los parrafos de texto
