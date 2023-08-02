@@ -1,8 +1,8 @@
 <div align="center">
-  <h1 align="center">App-Tour-Musical</h1>
+  <h1 align="center">TourTune</h1>
 </div>
 
-App-Tour-Musical es una aplicacion destinada al almacenamiento y distribucion de infomacion de eventos musicales. Informacion tal como ubicacion en un mapa, fecha, hora del evento, etc.
+TourTune es una aplicacion destinada al almacenamiento y distribucion de infomacion de eventos musicales. Informacion tal como ubicacion en un mapa, fecha, hora del evento, etc.
 A su mismo tiempo tambien presenta la posibilidad de compartir tu experiencia mediante el uso de comentarios y un sistema de reseña. 
 
 Requiere: `customtkinter` y `PIL`
