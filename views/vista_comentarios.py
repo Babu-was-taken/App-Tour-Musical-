@@ -76,7 +76,7 @@ class Vista_Comentarios(CTkFrame):
         self.animo_etiqueta = CTkLabel(self.frame_enviar_comentario, text="Ánimo", text_color=texto_color, font=("Roboto", 15))
 
         #Entrada
-        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", text_color=texto_color, font=("Open Sans",15)) 
+        self.entrada_comentario = CTkEntry(self.frame_enviar_comentario, width=400, placeholder_text="Escribir comentario", font=("Open Sans",15)) 
 
     def posicion_widgets(self):
         self.frame_enviar_comentario.pack(expand=True, fill="x", padx=2, pady=2)

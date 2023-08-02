@@ -71,7 +71,7 @@ class Vista_Detalles(CTkFrame):
                                          command=self.controlador.mostrar_seccion_ubicacion)
         self.boton_compartir = CTkButton(self.interior_frame, width=15, corner_radius=50, 
                                          fg_color="transparent", text="", hover_color=borde_color, 
-                                         image=self.twitter_img)
+                                         image=self.twitter_img, command=self.controlador.compartir)
         
         #Etiquetas
         self.detalles_etiqueta = CTkLabel(self, text="Detalles", 

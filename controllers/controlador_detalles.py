@@ -23,9 +23,11 @@ class Controlador_Detalles:
 
     def compartir(self):
         message = "Hey, échale un vistazo a este evento! :)"
-        url= "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+        urls = {1: "https://i.postimg.cc/x8w8VgqX/Pedro-Capo.jpg",
+               2: "https://i.postimg.cc/gky68XJ3/Luis-Miguel.jpg",
+               3: "https://i.postimg.cc/TPKw7pR7/Ghost-Argentina.jpg"}
         message = urllib.parse.quote(message)
-        url = urllib.parse.quote(url)
+        url = urllib.parse.quote(urls[self.evento_seleccionado.id])
         share_url = f"https://twitter.com/intent/tweet?text={message}&url={url}"
         webbrowser.open_new_tab(share_url)
 

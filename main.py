@@ -20,6 +20,7 @@ from models.ubicacion import Ubicacion
 from models.review import Review
 from models.usuario import Usuario
 
+set_appearance_mode("dark")
 
 class App(CTk):
     def __init__(self, imagenes=[]):
