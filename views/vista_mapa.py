@@ -40,20 +40,22 @@ class Vista_Mapa(CTkFrame):
         self.boton_volver = CTkButton(self, text="Volver",
                                       fg_color=cuerpo_color,
                                       border_color= contenedor_color,
+                                      hover_color=borde_color,
                                       text_color= titulo_color,
-                                      font=("Open Sans",15),
+                                      font=("Open Sans",20),
                                       command=self.controlador.volver)
         self.boton_detalles = CTkButton(self, text="Detalles", 
                                         fg_color=cuerpo_color,
                                         border_color= contenedor_color,
+                                        hover_color=borde_color,
                                         text_color= titulo_color,
-                                        font=("Open Sans",15),
+                                        font=("Open Sans",20),
                                         command=self.controlador.mostrar_seccion_detalles)
         self.boton_ubicacion = CTkButton(self, text="Ubicación",
                                          fg_color=cuerpo_color,
                                          border_color= contenedor_color,
                                          text_color= titulo_color,
-                                         font=("Open Sans",15),
+                                         font=("Open Sans",20),
                                          state="disabled")
 
         #Etiquetas
