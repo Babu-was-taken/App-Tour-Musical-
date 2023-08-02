@@ -69,5 +69,5 @@ class Vista_Usuario(CTkToplevel):
                 eventos_asistidos.append(evento)
                 self.crear_vista_historial(evento.nombre)
         if eventos_asistidos == []:
-            self.etiqueta = CTkLabel(self.frame_historial, text="Aún no se asistió a ningún evento")
+            self.etiqueta = CTkLabel(self.frame_historial, text="Aún no se asistió a ningún evento",text_color=texto_color)
             self.etiqueta.pack()
