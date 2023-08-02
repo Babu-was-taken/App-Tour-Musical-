@@ -26,7 +26,7 @@ class App(CTk):
         super().__init__()
         #Setup principal
         self.title("App Tour Musical 0.1")
-        self.geometry("700x500")
+        self.geometry("700x500+500+200")
         self.minsize(600,400)
         self.maxsize(800,600)
         #Se cargan los eventos y las ubicaciones
@@ -51,7 +51,7 @@ class App(CTk):
         self.Controlador_eventos = Controlador_Eventos(self, self.eventos)
         self.controlador_detalles = Controlador_Detalles(self, None)
         self.controlador_mapa = Controlador_Mapa(self, None)
-        self.controlador_usuario = Controlador_usuario(self)
+        self.controlador_usuario = Controlador_usuario(self, None)
 
         #Se muestra la pantalla inicial
         self.mostrar_login()
@@ -104,6 +104,13 @@ class App(CTk):
                
                print(f"ID del evento seleccionado {id}")
                print(self.eventos[id-1].nombre)
+
+    def seleccionar_usuario(self,id):
+        for usuario in self.usuarios:
+            if usuario.id == id:
+                print(usuario.nombre)
+                self.controlador_usuario = Controlador_usuario(self, usuario)
+                
 
 
 

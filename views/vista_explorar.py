@@ -1,15 +1,23 @@
 from customtkinter import *
 
 #Cambio de los colores de la interfaz visual
-boton= "#E6D884"
-borde= "#A1A892"
-frame= "#E5E5E5"
-titulo= "#2F242C"
-texto= "#E6D884"
+#boton= "#E6D884"
+#borde= "#A1A892"
+#frame= "#E5E5E5"
+#titulo= "#2F242C"
+#texto= "#E6D884"
+
+principal = "#52A5E0"
+titulo_color = "#EFF3F5"        #Se suele usar para los titulos y el texto en los botones
+texto_color = "#C8CDD0"         #Para los parrafos de texto
+subtitulo_color = "#A0A7AC"     #Para los subtitulos
+borde_color = "#2A3B47"         #Para el borde de los widgets y para el color del hover
+contenedor_color = "#212E36"    #Para el color del frame principal
+cuerpo_color = "#192229"        #Para los frames secundarios
 
 class Vista_Explorar(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color=frame, border_color=borde)
+        super().__init__(parent, fg_color=contenedor_color)
         self.parent = parent
         self.controlador = controlador
 
@@ -29,26 +37,31 @@ class Vista_Explorar(CTkFrame):
     def crear_widgets(self):
         #Botones
         self.boton_volver = CTkButton(self, text="volver",
-                                      fg_color=boton,
-                                      border_color= borde,
-                                      text_color= titulo,
+                                      fg_color=contenedor_color,
+                                      hover_color=borde_color,
+                                      text_color=titulo_color,
                                       font=("Open Sans",15),
                                       command=self.controlador.volver)
         self.boton_filtrar = CTkButton(self, text="Filtrar", 
+                                       fg_color=contenedor_color,
+                                       hover_color=borde_color,
+                                       text_color=titulo_color,
                                        font=("Open Sans",15),
                                        command=lambda: self.controlador.filtrar(self.tipo_filtro_var.get(),
                                                                                 self.valor_a_buscar_var.get()))
         self.boton_quitar_filtro = CTkButton(self, text="Quitar filtro",
-                                             fg_color="orange",
+                                             fg_color=contenedor_color,
+                                             hover_color=borde_color,
+                                             text_color=titulo_color,
                                              font=("Open Sans",15),
                                              command=self.controlador.quitar_filtro)
 
         #Etiquetas
         self.titulo_eventos = CTkLabel(self, text="Eventos",
-                                       text_color=titulo, 
+                                       text_color=principal, 
                                        font=("Roboto", 30, "bold"))
         self.filtrar_etiqueta = CTkLabel(self, text="Filtrar por:",
-                                         text_color=titulo, 
+                                         text_color=titulo_color, 
                                          font=("Roboto", 15, "bold"))
         
         #Variable de contról
@@ -57,11 +70,32 @@ class Vista_Explorar(CTkFrame):
 
 
         #Option_Menu
-        self.tipo_filtro_option = CTkOptionMenu(self, values=["Artista", "Genero"], variable=self.tipo_filtro_var, command=self.cambiar_filtro)
-        self.artista_option = CTkOptionMenu(self, values=["Ghost", "Luis Miguel", "Pedro Capo"], variable=self.valor_a_buscar_var)
+        self.tipo_filtro_option = CTkOptionMenu(self, values=["Artista", "Genero"], variable=self.tipo_filtro_var, command=self.cambiar_filtro,
+                                                fg_color=cuerpo_color, 
+                                                button_color=contenedor_color,
+                                                button_hover_color=borde_color,
+                                                dropdown_fg_color=contenedor_color,
+                                                dropdown_hover_color=borde_color,
+                                                dropdown_text_color=titulo_color,
+                                                text_color=titulo_color)
+        self.artista_option = CTkOptionMenu(self, values=["Ghost", "Luis Miguel", "Pedro Capo"], variable=self.valor_a_buscar_var,
+                                            fg_color=cuerpo_color, 
+                                            button_color=contenedor_color,
+                                            button_hover_color=borde_color,
+                                            dropdown_fg_color=contenedor_color,
+                                            dropdown_hover_color=borde_color,
+                                            dropdown_text_color=titulo_color,
+                                            text_color=titulo_color)
         self.genero_option = CTkOptionMenu(self, values=["Arena rock", "Balada", "Bolero", "Dance-Pop", "Doom metal", 
                                                          "Hard rock", "Heavy metal", "Mariachi", "Pop latino", "Pop rock", 
-                                                         "Rock progresivo", "Rock psicodelico"], variable=self.valor_a_buscar_var)
+                                                         "Rock progresivo", "Rock psicodelico"], variable=self.valor_a_buscar_var,
+                                                         fg_color=cuerpo_color, 
+                                                         button_color=contenedor_color,
+                                                         button_hover_color=borde_color,
+                                                         dropdown_fg_color=contenedor_color,
+                                                         dropdown_hover_color=borde_color,
+                                                         dropdown_text_color=titulo_color,
+                                                         text_color=titulo_color)
 
     #Posición de widgets
     def posicion_widgets(self):
@@ -79,7 +113,7 @@ class Vista_Explorar(CTkFrame):
         print(choice)
         if choice == "Artista":
             self.artista_option.tkraise()
-            self.valor_a_buscar_var.set(value="Ghos")
+            self.valor_a_buscar_var.set(value="Ghost")
         else:
             self.genero_option.tkraise()
             self.valor_a_buscar_var.set(value="Arena rock")

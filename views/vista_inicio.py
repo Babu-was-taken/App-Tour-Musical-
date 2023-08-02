@@ -34,7 +34,7 @@ class Vista_Inicio(CTkFrame):
                                         command=self.controlador.mostrar_explorar)
         self.boton_mi_perdil = CTkButton(self, text="Mi Perfil",
                                          font=("Open Sans",15),
-                                         command=self.controlador.mi_perfil)
+                                         command=lambda: self.controlador.mi_perfil(self.parent.usuarios[-1].id))
         self.boton_salir = CTkButton(master=self, text="Salír", 
                                      fg_color=boton,
                                      border_color=borde,
