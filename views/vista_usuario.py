@@ -20,7 +20,7 @@ class Vista_Usuario(CTkToplevel):
         self.focus()
 
 
-        self.frame = CTkFrame(self)
+        self.frame = CTkFrame(self,fg_color=contenedor_color)
         self.frame.pack(expand=True, fill="both")
 
         #Grid Layout
@@ -38,14 +38,14 @@ class Vista_Usuario(CTkToplevel):
         self.frame_historial = CTkScrollableFrame(self.frame, fg_color=cuerpo_color)
 
         #Etiquetas
-        self.usuario_etiqueta = CTkLabel(self.frame, text="Detalles de Usuario", font=("Roboto", 30, "bold"))
-        self.nombre_etiqueta = CTkLabel(self.frame, text=f"Nombre: {self.controlador.usuario.nombre}", font=("Roboto",20))
-        self.apellido_etiqueta = CTkLabel(self.frame, text=f"Apellido: {self.controlador.usuario.apellido}", font=("Roboto",20))
-        self.eventos_asistidos_etiqueta = CTkLabel(self.frame, text="Eventos asistidos:", font=("Roboto",20))
+        self.usuario_etiqueta = CTkLabel(self.frame, text="Detalles de Usuario", font=("Roboto", 30, "bold"),text_color=titulo_color)
+        self.nombre_etiqueta = CTkLabel(self.frame, text=f"Nombre: {self.controlador.usuario.nombre}", font=("Roboto",20),text_color=titulo_color)
+        self.apellido_etiqueta = CTkLabel(self.frame, text=f"Apellido: {self.controlador.usuario.apellido}", font=("Roboto",20),text_color=titulo_color)
+        self.eventos_asistidos_etiqueta = CTkLabel(self.frame, text="Eventos asistidos:", font=("Roboto",20),text_color=titulo_color)
 
         #Botones
-        self.boton_añadir = CTkButton(self.frame, width=100, text="Añadir", font=("Open Sans",15))
-        self.boton_cerrar = CTkButton(self.frame, width=100, text="Cerrar", font=("Open Sans",15), command=self.controlador.cerrar)
+        self.boton_añadir = CTkButton(self.frame, width=100, text="Añadir", font=("Open Sans",15), fg_color=cuerpo_color, border_color=contenedor_color, text_color= titulo_color)
+        self.boton_cerrar = CTkButton(self.frame, width=100, text="Cerrar", font=("Open Sans",15),fg_color=cuerpo_color, border_color=contenedor_color, text_color= titulo_color, command=self.controlador.cerrar)
 
     def posicion_widgets(self):
         self.frame_historial.grid(row=4, column=1, columnspan=3, sticky="nsew", padx=10, pady=5)
@@ -58,7 +58,7 @@ class Vista_Usuario(CTkToplevel):
 
 
     def crear_vista_historial(self, nombre):
-        nombre_de_evento = CTkLabel(self.frame_historial, text=nombre)
+        nombre_de_evento = CTkLabel(self.frame_historial, text=nombre,text_color=texto_color)
         nombre_de_evento.pack()
 
 

@@ -37,23 +37,23 @@ class Vista_Explorar(CTkFrame):
     #Creación de widgets
     def crear_widgets(self):
         #Botones
-        self.boton_volver = CTkButton(self, text="volver",
-                                      fg_color=contenedor_color,
-                                      hover_color=borde_color,
-                                      text_color=titulo_color,
+        self.boton_volver = CTkButton(self, text="Volver", 
+                                     fg_color=cuerpo_color,
+                                     border_color=contenedor_color,
+                                     text_color= titulo_color,
                                       font=("Open Sans",15),
                                       command=self.controlador.volver)
         self.boton_filtrar = CTkButton(self, text="Filtrar", 
-                                       fg_color=contenedor_color,
-                                       hover_color=borde_color,
-                                       text_color=titulo_color,
+                                       fg_color=cuerpo_color,
+                                       border_color=contenedor_color,
+                                       text_color= titulo_color,
                                        font=("Open Sans",15),
                                        command=lambda: self.controlador.filtrar(self.tipo_filtro_var.get(),
                                                                                 self.valor_a_buscar_var.get()))
-        self.boton_quitar_filtro = CTkButton(self, text="Quitar filtro",
-                                             fg_color=contenedor_color,
-                                             hover_color=borde_color,
-                                             text_color=titulo_color,
+        self.boton_quitar_filtro = CTkButton(self, text="Quitar filtro", 
+                                             fg_color=cuerpo_color,
+                                             border_color=contenedor_color,
+                                             text_color= titulo_color,
                                              font=("Open Sans",15),
                                              command=self.controlador.quitar_filtro)
 

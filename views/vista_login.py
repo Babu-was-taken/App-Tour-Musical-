@@ -1,8 +1,16 @@
 from customtkinter import *
 
+principal = "#52A5E0"
+titulo_color = "#EFF3F5"        #Se suele usar para los titulos y el texto en los botones
+texto_color = "#C8CDD0"         #Para los parrafos de texto
+subtitulo_color = "#A0A7AC"     #Para los subtitulos
+borde_color = "#2A3B47"         #Para el borde de los widgets y para el color del hover
+contenedor_color = "#212E36"    #Para el color del frame principal
+cuerpo_color = "#192229"        #Para los frames secundarios
+
 class Vista_Login(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent)
+        super().__init__(parent,fg_color=contenedor_color)
         self.controlador = controlador
 
         #Posición que tendrá en la App
@@ -20,11 +28,14 @@ class Vista_Login(CTkFrame):
 
     def crear_widgets(self):
         #Etiquetas
-        self.bienvenido_etiqueta = CTkLabel(self, text="Bienvenido", font=("Open Sans", 25))
+        self.bienvenido_etiqueta = CTkLabel(self, text="Bienvenido", font=("Open Sans", 25),text_color=titulo_color)
 
         #Boton
         self.iniciar_sesion_boton = CTkButton(self, height=40, 
-                                              text="Iniciar Sesión", 
+                                              text="Iniciar Sesión",
+                                              fg_color=cuerpo_color,
+                                              border_color= contenedor_color,
+                                              text_color= titulo_color,
                                               font=("Open Sans", 20),
                                               command=lambda: 
                                               self.controlador.iniciar_sesion(self.entrada_nombre.get(),

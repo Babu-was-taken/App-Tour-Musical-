@@ -1,15 +1,16 @@
 from customtkinter import *
 
-#Cambio de los colores de la interfaz visual
-boton= "#E6D884"
-borde= "#A1A892"
-frame= "#E5E5E5"
-titulo= "#2F242C"
-texto= "#E6D884"
+principal = "#52A5E0"
+titulo_color = "#EFF3F5"        #Se suele usar para los titulos y el texto en los botones
+texto_color = "#C8CDD0"         #Para los parrafos de texto
+subtitulo_color = "#A0A7AC"     #Para los subtitulos
+borde_color = "#2A3B47"         #Para el borde de los widgets y para el color del hover
+contenedor_color = "#212E36"    #Para el color del frame principal
+cuerpo_color = "#192229"        #Para los frames secundarios
 
 class Vista_Inicio(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color=frame, border_color=borde)
+        super().__init__(parent, fg_color=contenedor_color, border_color=borde_color)
         self.parent = parent
         self.controlador = controlador
 
@@ -26,19 +27,22 @@ class Vista_Inicio(CTkFrame):
 
     #Creación de widgets
     def crear_widgets(self):
-        self.boton_explorar = CTkButton(master=self, text="Explorar",
-                                        fg_color=boton,
-                                        border_color= borde,
-                                        text_color= titulo,
+        self.boton_explorar = CTkButton(master=self, text="Explorar", 
+                                        fg_color=cuerpo_color,
+                                        border_color=contenedor_color,
+                                        text_color= titulo_color,
                                         font=("Open Sans",15),
                                         command=self.controlador.mostrar_explorar)
-        self.boton_mi_perdil = CTkButton(self, text="Mi Perfil",
+        self.boton_mi_perdil = CTkButton(self, text="Mi Perfil", 
+                                         fg_color=cuerpo_color,
+                                         border_color=contenedor_color,
+                                         text_color= titulo_color,
                                          font=("Open Sans",15),
                                          command=lambda: self.controlador.mi_perfil(self.parent.usuarios[-1].id))
         self.boton_salir = CTkButton(master=self, text="Salír", 
-                                     fg_color=boton,
-                                     border_color=borde,
-                                     text_color= titulo,
+                                     fg_color=cuerpo_color,
+                                     border_color=contenedor_color,
+                                     text_color= titulo_color,
                                      font=("Open Sans",15),
                                      command=self.controlador.salir)
 
