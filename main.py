@@ -8,12 +8,14 @@ from views.vista_eventos import Vista_Eventos
 from views.vista_detalles import Vista_Detalles
 from views.vista_comentarios import Vista_Comentarios
 from views.vista_mapa import Vista_Mapa
+from views.vista_usuario import Vista_Usuario
 from controllers.controlador_inicio import Controlador_Inicio
 from controllers.controlador_login import Controlador_login 
 from controllers.controlador_explorar import Controlador_Explorar
 from controllers.controlador_eventos import Controlador_Eventos
 from controllers.controlador_detalles import Controlador_Detalles
 from controllers.controlador_mapa import Controlador_Mapa
+from controllers.controlador_usuario import Controlador_usuario
 from models.ubicacion import Ubicacion
 from models.review import Review
 from models.usuario import Usuario
@@ -49,6 +51,7 @@ class App(CTk):
         self.Controlador_eventos = Controlador_Eventos(self, self.eventos)
         self.controlador_detalles = Controlador_Detalles(self, None)
         self.controlador_mapa = Controlador_Mapa(self, None)
+        self.controlador_usuario = Controlador_usuario(self)
 
         #Se muestra la pantalla inicial
         self.mostrar_login()
@@ -86,6 +89,9 @@ class App(CTk):
 
     def mostrar_ubicacion(self):
         self.vista_mapa = Vista_Mapa(self, self.controlador_mapa)
+
+    def mostrar_usuario(self):
+        self.vista_usuario = Vista_Usuario(self, self.controlador_usuario)
 
 
     def seleccionar_evento(self, id):

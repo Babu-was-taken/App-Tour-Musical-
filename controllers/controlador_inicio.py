@@ -10,6 +10,10 @@ class Controlador_Inicio:
         self.app.mostrar_explorar()
         self.app.mostrar_eventos()
 
+    def mi_perfil(self):
+        self.app.vista_inicio.destroy()
+        self.app.mostrar_usuario()
+
     def salir(self):
         respuesta = askyesno("Confirmar", "¿Seguro que desea salír?")
         if respuesta:

@@ -32,7 +32,10 @@ class Vista_Inicio(CTkFrame):
                                         text_color= titulo,
                                         font=("Open Sans",15),
                                         command=self.controlador.mostrar_explorar)
-        self.boton_salir = CTkButton(master=self, text="Salír",
+        self.boton_mi_perdil = CTkButton(self, text="Mi Perfil",
+                                         font=("Open Sans",15),
+                                         command=self.controlador.mi_perfil)
+        self.boton_salir = CTkButton(master=self, text="Salír", 
                                      fg_color=boton,
                                      border_color=borde,
                                      text_color= titulo,
@@ -42,4 +45,5 @@ class Vista_Inicio(CTkFrame):
     #Posicón de widgets
     def posición_widgets(self):
         self.boton_explorar.grid(row=1, column=0, padx=5, pady=5)
+        self.boton_mi_perdil.grid(row=2, column=0, padx=5, pady=5)
         self.boton_salir.grid(row=3, column=0, padx=5, pady=5)
