@@ -46,7 +46,7 @@ class Vista_Eventos(CTkScrollableFrame):
         nombre_evento = CTkLabel(frame_evento, text=nombre_evento,
                                  text_color=subtitulo_color,
                                  font=("Roboto",20))
-        foto_evento = CTkLabel(frame_evento, image=self.controlador.app.imagenes[id-1])   #Se le resta 1 al id y se lo usa como indice para
+        foto_evento = CTkLabel(frame_evento, image=self.controlador.app.imagenes[id-1],text="")   #Se le resta 1 al id y se lo usa como indice para
         descripcion_etiqueta = CTkLabel(frame_evento, text=descripcion,                   #mostrar la imagen en ese indice de la lista
                                         text_color=subtitulo_color,
                                         font=("Roboto",20))                  
