@@ -46,7 +46,7 @@ class Vista_Usuario(CTkToplevel):
         self.eventos_asistidos_etiqueta = CTkLabel(self.frame, text="Eventos asistidos:", font=("Roboto",20),text_color=titulo_color)
 
         #Botones
-        self.boton_cerrar = CTkButton(self.frame, width=100, text="Cerrar", font=("Open Sans",15),fg_color=cuerpo_color, border_color=contenedor_color, text_color= titulo_color, command=self.controlador.cerrar)
+        self.boton_cerrar = CTkButton(self.frame, width=100, border_width=2, text="Cerrar", font=("Open Sans",15),fg_color=cuerpo_color, border_color=borde_color, text_color= titulo_color, command=self.controlador.cerrar)
 
     def posicion_widgets(self):
         self.frame_historial.grid(row=4, column=1, columnspan=3, sticky="nsew", padx=10, pady=5)

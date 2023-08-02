@@ -46,7 +46,9 @@ class Vista_Eventos(CTkScrollableFrame):
 
         #Botones
         boton_detalles = CTkButton(frame_evento, text="Ver Detalles",
+                                   border_width=2,
                                    fg_color=contenedor_color,
+                                   border_color=borde_color,
                                    hover_color=borde_color,
                                    text_color= titulo_color,
                                    font=("Open Sans",15),

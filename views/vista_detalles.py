@@ -42,24 +42,27 @@ class Vista_Detalles(CTkFrame):
         self.interior_frame.columnconfigure((0,1,2,3,4), weight=1, uniform="a")
 
         #Botones
-        self.boton_volver = CTkButton(self, text="Volver", 
-                                     fg_color=cuerpo_color,
-                                     border_color=contenedor_color,
-                                     hover_color=borde_color,
-                                     text_color= titulo_color,
-                                        font=("Open Sans",20), 
-                                        command=self.controlador.volver)
-        self.boton_detalles = CTkButton(self, text="Detalles", 
-                                     fg_color=cuerpo_color,
-                                     border_color=contenedor_color,
-                                     text_color= titulo_color,
+        self.boton_volver = CTkButton(self, text="Volver",
+                                      border_width=2,
+                                      fg_color=cuerpo_color,
+                                      border_color=borde_color,
+                                      hover_color=borde_color,
+                                      text_color= titulo_color,
+                                      font=("Open Sans",20), 
+                                      command=self.controlador.volver)
+        self.boton_detalles = CTkButton(self, text="Detalles",
+                                        border_width=2,
+                                        fg_color=cuerpo_color,
+                                        border_color=borde_color,
+                                        text_color= titulo_color,
                                         font=("Open Sans",20),
                                         state="disabled")
-        self.boton_ubicacion = CTkButton(self, text="Ubicación", 
-                                     fg_color=cuerpo_color,
-                                     border_color=contenedor_color,
-                                     hover_color=borde_color,
-                                     text_color= titulo_color,
+        self.boton_ubicacion = CTkButton(self, text="Ubicación",
+                                         border_width=2,
+                                         fg_color=cuerpo_color,
+                                         border_color=borde_color,
+                                         hover_color=borde_color,
+                                         text_color= titulo_color,
                                          font=("Open Sans",20),
                                          command=self.controlador.mostrar_seccion_ubicacion)
         self.boton_compartir = CTkButton(self.interior_frame, width=15, corner_radius=50, 

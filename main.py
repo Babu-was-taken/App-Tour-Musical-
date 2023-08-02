@@ -26,7 +26,7 @@ class App(CTk):
     def __init__(self, imagenes=[]):
         super().__init__()
         #Setup principal
-        self.title("App Tour Musical 0.1")
+        self.title("App Tour Musical 1.0")
         self.geometry("700x500+500+200")
         self.minsize(600,400)
         self.maxsize(800,600)
@@ -68,6 +68,8 @@ class App(CTk):
 
     def cargar_fondo(self, fondo):
         return CTkImage(Image.open(f"assets/{fondo}"), size=(700, 500))
+    def cargar_icono(self, icono):
+        return CTkImage(Image.open(f"assets/iconos/{icono}"), size=(25, 25))
 
     #Mostrar vistas
     def mostrar_inicio(self):

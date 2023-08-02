@@ -38,22 +38,25 @@ class Vista_Mapa(CTkFrame):
 
         #Botones
         self.boton_volver = CTkButton(self, text="Volver",
+                                      border_width=2,
                                       fg_color=cuerpo_color,
-                                      border_color= contenedor_color,
+                                      border_color= borde_color,
                                       hover_color=borde_color,
                                       text_color= titulo_color,
                                       font=("Open Sans",20),
                                       command=self.controlador.volver)
         self.boton_detalles = CTkButton(self, text="Detalles", 
+                                        border_width=2,
                                         fg_color=cuerpo_color,
-                                        border_color= contenedor_color,
+                                        border_color= borde_color,
                                         hover_color=borde_color,
                                         text_color= titulo_color,
                                         font=("Open Sans",20),
                                         command=self.controlador.mostrar_seccion_detalles)
         self.boton_ubicacion = CTkButton(self, text="Ubicación",
+                                         border_width=2,
                                          fg_color=cuerpo_color,
-                                         border_color= contenedor_color,
+                                         border_color= borde_color,
                                          text_color= titulo_color,
                                          font=("Open Sans",20),
                                          state="disabled")

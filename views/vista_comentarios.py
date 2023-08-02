@@ -54,7 +54,9 @@ class Vista_Comentarios(CTkFrame):
 
         #Botones
         self.boton_enviar_comentario = CTkButton(self.frame_enviar_comentario,
+                                                 border_width=2,
                                                  fg_color=contenedor_color,
+                                                 border_color=borde_color,
                                                  hover_color=borde_color,
                                                  text_color= titulo_color,
                                                  font=("Open Sans",15), 
@@ -93,7 +95,8 @@ class Vista_Comentarios(CTkFrame):
 
         #Widgets
         #Botón
-        boton_ver_perfil = CTkButton(frame_comentario, text="Ver Perfil", fg_color=cuerpo_color,
+        boton_ver_perfil = CTkButton(frame_comentario, text="Ver Perfil", border_width=2,
+                                     fg_color=cuerpo_color, border_color=borde_color,
                                      hover_color=borde_color, text_color= titulo_color, font=("Open Sans", 15),
                                      command=lambda: self.controlador.ver_perfil(id))
 

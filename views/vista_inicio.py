@@ -33,22 +33,25 @@ class Vista_Inicio(CTkFrame):
 
         #Botones
         self.boton_explorar = CTkButton(master=self, text="Explorar", 
+                                        border_width=2,
                                         fg_color=cuerpo_color,
-                                        border_color=contenedor_color,
+                                        border_color=borde_color,
                                         hover_color=borde_color,
                                         text_color= titulo_color,
                                         font=("Open Sans",15),
                                         command=self.controlador.mostrar_explorar)
         self.boton_mi_perdil = CTkButton(self, text="Mi Perfil", 
+                                         border_width=2,
                                          fg_color=cuerpo_color,
-                                         border_color=contenedor_color,
+                                         border_color=borde_color,
                                          hover_color=borde_color,
                                          text_color= titulo_color,
                                          font=("Open Sans",15),
                                          command=lambda: self.controlador.mi_perfil(self.parent.usuarios[-1].id))
         self.boton_salir = CTkButton(master=self, text="Salír", 
+                                     border_width=2,
                                      fg_color=cuerpo_color,
-                                     border_color=contenedor_color,
+                                     border_color=borde_color,
                                      hover_color=borde_color,
                                      text_color= titulo_color,
                                      font=("Open Sans",15),

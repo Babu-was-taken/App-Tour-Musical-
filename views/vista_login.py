@@ -39,8 +39,10 @@ class Vista_Login(CTkFrame):
 
         #Boton
         self.iniciar_sesion_boton = CTkButton(self.frame_interior, height=30, 
+                                              border_width=2,
                                               text="Iniciar Sesión",
                                               fg_color=cuerpo_color,
+                                              border_color=borde_color,
                                               hover_color= borde_color,
                                               text_color= titulo_color,
                                               font=("Open Sans", 20),
