@@ -8,7 +8,7 @@ class Controlador_login:
 
     #Crea un objeto de la clase Usuario y se lo añade a la lista de usuarios
     def iniciar_sesion(self, nombre, apellido):
-        nuevo_usuario = {"id": self.app.usuarios[-1].id+1, "nombre":nombre, "apellido":apellido, "historial_eventos":[]}
+        nuevo_usuario = {"id": self.app.usuarios[-1].id+1, "nombre":nombre, "apellido":apellido, "historial_eventos":[1,3]}
         nuevo_usuario = Usuario.añadir_usuario(nuevo_usuario)
 
         print(f"usuarios registrados: {len(self.app.usuarios)}")

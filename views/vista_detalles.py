@@ -1,4 +1,5 @@
 from customtkinter import *
+from PIL import Image, ImageTk
 
 #Cambio de los colores de la interfaz visual
 boton= "#E6D884"
@@ -24,6 +25,7 @@ class Vista_Detalles(CTkFrame):
         self.columnconfigure(1, weight=5, uniform="a")
 
         #Widgets
+        self.twitter_img = ImageTk.PhotoImage(Image.open("assets/twitter_image.png").resize((30, 30)))
         self.crear_widgets()
         self.posicion_widgets()
 
@@ -58,6 +60,7 @@ class Vista_Detalles(CTkFrame):
                                          hover_color=borde,
                                          font=("Open Sans",20),
                                          command=self.controlador.mostrar_seccion_ubicacion)
+        self.boton_compartir = CTkButton(self.interior_frame, width=15, corner_radius=50, fg_color="transparent", text="", image=self.twitter_img)
         
         #Etiquetas
         self.detalles_etiqueta = CTkLabel(self, text="Detalles", 
@@ -115,3 +118,4 @@ class Vista_Detalles(CTkFrame):
         self.descripcion.grid(row=4, column=0, columnspan=5, sticky="w", padx=10, pady=5)
         self.genero_titulo.grid(row=5, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.genero.grid(row=6, column=0, columnspan=5, sticky="w", padx=10, pady=5)
+        self.boton_compartir.grid(row=0, column=4, padx=5, pady=5)
