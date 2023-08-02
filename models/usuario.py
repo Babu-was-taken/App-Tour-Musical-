@@ -12,4 +12,8 @@ class Usuario:
     def cargar_de_json(cls, archivo):
         with open(archivo, "r") as f:
             data = json.load(f)
-        return [cls(**ubicacion) for ubicacion in data]
+        return [cls(**usuario) for usuario in data]
+    
+    @classmethod
+    def añadir_usuario(cls, usuario):
+        return cls(**usuario)

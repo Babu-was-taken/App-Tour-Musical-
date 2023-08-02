@@ -7,10 +7,11 @@ frame= "#E5E5E5"
 titulo= "#2F242C"
 texto= "#E6D884"
 
+
+
 class Vista_Detalles(CTkFrame):
     def __init__(self, parent, controlador):
-        super().__init__(parent, fg_color= frame,border_color= borde)
-
+        super().__init__(parent, fg_color=frame)
         self.parent = parent
         self.controlador = controlador
 
@@ -31,8 +32,7 @@ class Vista_Detalles(CTkFrame):
         #Frames
         #Frame desplegable en el que se mostrarán los detalles del evento
         self.detalles_frame = CTkScrollableFrame(self)
-        self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color= "#A1A892")
-
+        self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color=borde)
 
 
         #Grid Layout
@@ -41,22 +41,61 @@ class Vista_Detalles(CTkFrame):
 
         #Botones
         self.boton_volver = CTkButton(self, text="Volver",
-                                      command=self.controlador.volver,fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
-        self.boton_detalles = CTkButton(self, text="Detalles", state="disabled",fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
+                                      fg_color= boton,
+                                      hover_color= borde,
+                                      text_color= titulo,
+                                      font=("Open Sans",20),
+                                      command=self.controlador.volver)
+        self.boton_detalles = CTkButton(self, text="Detalles", 
+                                        fg_color= boton,
+                                        hover_color= borde,
+                                        text_color= titulo,
+                                        font=("Open Sans",20),
+                                        state="disabled")
         self.boton_ubicacion = CTkButton(self, text="Ubicación",
-                                         command=self.controlador.mostrar_seccion_ubicacion,fg_color= boton,text_color= titulo,font=("Open Sans",20),border_color= borde)
+                                         fg_color=boton,
+                                         text_color=titulo,
+                                         hover_color=borde,
+                                         font=("Open Sans",20),
+                                         command=self.controlador.mostrar_seccion_ubicacion)
         
         #Etiquetas
-        self.detalles_etiqueta = CTkLabel(self, text="Detalles", font=("Roboto", 30, "bold"),text_color= titulo)
-        self.nombre_etiqueta = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.nombre, font=("Roboto", 15),text_color= titulo)
-        self.artista = CTkLabel(self.interior_frame, text=f"Artista: {self.controlador.evento_seleccionado.artista}",font=("Roboto",15),text_color= texto)
+        self.detalles_etiqueta = CTkLabel(self, text="Detalles", 
+                                          text_color=titulo,
+                                          font=("Roboto", 30, "bold"))
+        self.nombre_etiqueta = CTkLabel(self.interior_frame, 
+                                        text=self.controlador.evento_seleccionado.nombre, 
+                                        text_color= texto,
+                                        font=("Roboto", 15))
+        self.artista = CTkLabel(self.interior_frame, 
+                                text=f"Artista: {self.controlador.evento_seleccionado.artista}",
+                                text_color= texto,
+                                font=("Roboto",15))
         self.imagen = CTkLabel(self.interior_frame, image=self.parent.imagenes[self.controlador.evento_seleccionado.id-1])
-        self.fecha_inicio = CTkLabel(self.interior_frame, text=f"Desde: {self.controlador.evento_seleccionado.hora_inicio}",font=("Roboto",15),text_color= texto)
-        self.fecha_fin = CTkLabel(self.interior_frame, text=f"Hasta: {self.controlador.evento_seleccionado.hora_fin}",font=("Roboto",15),text_color= texto)
-        self.descripbion_titulo = CTkLabel(self.interior_frame, text="Descripción", font=("Roboto", 20),text_color= titulo)
-        self.descripcion = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.descripcion,font=("Open Sans",15),text_color= texto)
-        self.genero_titulo = CTkLabel(self.interior_frame, text="Género", font=("Roboto", 20), text_color= titulo)
-        self.genero = CTkLabel(self.interior_frame, text=self.controlador.evento_seleccionado.genero,font=("Open Sans",15),text_color= texto)
+        self.fecha_inicio = CTkLabel(self.interior_frame, 
+                                     text=f"Desde: {self.controlador.evento_seleccionado.hora_inicio}",
+                                     text_color=texto,
+                                     font=("Roboto",15))
+        self.fecha_fin = CTkLabel(self.interior_frame, 
+                                  text=f"Hasta: {self.controlador.evento_seleccionado.hora_fin}",
+                                  text_color= texto,
+                                  font=("Roboto",15))
+        self.descripbion_titulo = CTkLabel(self.interior_frame, text="Descripción", 
+                                           text_color= texto,
+                                           font=("Roboto", 20))
+        self.descripcion = CTkLabel(self.interior_frame, 
+                                    text=self.controlador.evento_seleccionado.descripcion,
+                                    text_color= texto,
+                                    font=("Open Sans",15))
+        self.genero_titulo = CTkLabel(self.interior_frame, 
+                                      text="Género",
+                                       text_color= texto,
+                                         font=("Roboto", 20))
+        self.genero = CTkLabel(self.interior_frame, 
+                               text=self.controlador.evento_seleccionado.genero,
+                               text_color=texto,
+                               font=("Open Sans",13),)
+
 
     #Posición de widgets
     def posicion_widgets(self):
@@ -66,7 +105,6 @@ class Vista_Detalles(CTkFrame):
         self.boton_volver.grid(row=1, column=0, padx=5, pady=5)
         self.boton_detalles.grid(row=2, column=0, padx=5, pady=5)
         self.boton_ubicacion.grid(row=3, column=0, padx=5, pady=5)
-
         self.detalles_etiqueta.grid(row=0, column=1, padx=5, pady=5)
         self.nombre_etiqueta.grid(row=0, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.artista.grid(row=1, column=2, columnspan=2, sticky="w", padx=5, pady=5)
@@ -77,4 +115,3 @@ class Vista_Detalles(CTkFrame):
         self.descripcion.grid(row=4, column=0, columnspan=5, sticky="w", padx=10, pady=5)
         self.genero_titulo.grid(row=5, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.genero.grid(row=6, column=0, columnspan=5, sticky="w", padx=10, pady=5)
-

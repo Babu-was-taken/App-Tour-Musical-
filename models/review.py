@@ -17,4 +17,8 @@ class Review:
     def cargar_de_json(cls, archivo):
         with open(archivo, "r") as f:
             data = json.load(f)
-        return [cls(**evento) for evento in data]
+        return [cls(**review) for review in data]
+    
+    @classmethod
+    def añadir_comentario(cls, comentario):
+        return cls(**comentario)
