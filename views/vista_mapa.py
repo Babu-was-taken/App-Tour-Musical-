@@ -27,7 +27,7 @@ class Vista_Mapa(CTkFrame):
         self.crear_widgets()
         self.posicion_widgets()
 
-        self.agregar_marcador()
+        self.controlador.cargar_marcadores(self)
 
     def crear_widgets(self):
         #Frame que mostrará la ubicación del evento en el mapa
@@ -80,8 +80,9 @@ class Vista_Mapa(CTkFrame):
 
 
     #Coloca un marcador en la ubicación del evento seleccionado
-    def agregar_marcador(self):
-        ubicacion_seleccionada = self.controlador.ubicacion_seleccionada
-        self.mapa.set_position(ubicacion_seleccionada.latitud, ubicacion_seleccionada.longitud)
-        self.mapa.set_marker(ubicacion_seleccionada.latitud, ubicacion_seleccionada.longitud)
-        print(ubicacion_seleccionada.latitud, ubicacion_seleccionada.longitud)
+    def agregar_marcador(self, ubicacion, imagen):
+        self.mapa.set_position(ubicacion.latitud+0.001, ubicacion.longitud)
+        marcador = self.mapa.set_marker(ubicacion.latitud, ubicacion.longitud, 
+                                        text=ubicacion.direccion, image=imagen,
+                                        command=self.controlador.seleccionar_ubicacion)
+        return marcador

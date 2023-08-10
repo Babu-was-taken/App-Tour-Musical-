@@ -18,7 +18,8 @@ class Vista_Usuario(CTkToplevel):
 
         self.title("Detalles de Usuario")
         self.geometry("600x400+400+100")
-
+        self.minsize(500,400)
+        self.maxsize(700,500)
 
         self.frame = CTkFrame(self,fg_color=contenedor_color)
         self.frame.pack(expand=True, fill="both")
