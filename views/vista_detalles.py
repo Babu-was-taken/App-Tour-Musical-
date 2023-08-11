@@ -20,12 +20,13 @@ class Vista_Detalles(CTkFrame):
         self.pack(expand=True, fil="both", padx=2, pady=2)
 
         #Grid Layout
-        self.rowconfigure((0,1,3,4,5,6), weight=1, uniform="a")
+        self.rowconfigure((0,1,2,3), weight=1, uniform="a")
+        self.rowconfigure((4), weight=3, uniform="a")
         self.columnconfigure(0, weight=1, uniform="a")
         self.columnconfigure(1, weight=5, uniform="a")
 
         #Widgets
-        self.twitter_img = ImageTk.PhotoImage(Image.open("assets/twitter_image.png").resize((30, 30)))
+        self.twitter_img = CTkImage(Image.open("assets/twitter_image.png"), size=(30, 30))
         self.crear_widgets()
         self.posicion_widgets()
 
@@ -35,6 +36,7 @@ class Vista_Detalles(CTkFrame):
         #Frame desplegable en el que se mostrarán los detalles del evento
         self.detalles_frame = CTkScrollableFrame(self, fg_color=contenedor_color, scrollbar_button_color=cuerpo_color, scrollbar_button_hover_color=borde_color)
         self.interior_frame = CTkFrame(self.detalles_frame, height=300, fg_color=cuerpo_color)
+        self.interior_frame_2 = CTkFrame(self.detalles_frame, height=300, fg_color=contenedor_color)
 
 
         #Grid Layout
@@ -70,7 +72,7 @@ class Vista_Detalles(CTkFrame):
                                          image=self.twitter_img, command=self.controlador.compartir)
         
         #Etiquetas
-        self.detalles_etiqueta = CTkLabel(self, text="Detalles", 
+        self.detalles_etiqueta = CTkLabel(self.interior_frame_2, text="Detalles", 
                                           text_color=titulo_color,
                                           font=("Roboto", 30, "bold"))
         self.nombre_etiqueta = CTkLabel(self.interior_frame, 
@@ -109,13 +111,15 @@ class Vista_Detalles(CTkFrame):
 
     #Posición de widgets
     def posicion_widgets(self):
-        self.detalles_frame.grid(row=1, column=1, rowspan=7, padx=5, pady=5, sticky="nsew")
+        self.detalles_frame.grid(row=0, column=1, rowspan=5, sticky="nsew", padx=5, pady=5)
+        self.interior_frame_2.pack(expand=True, fill="x", padx=2, pady=2)
         self.interior_frame.pack(expand=True, fill="x", padx=2, pady=2)
+
 
         self.boton_volver.grid(row=1, column=0, padx=5, pady=5)
         self.boton_detalles.grid(row=2, column=0, padx=5, pady=5)
         self.boton_ubicacion.grid(row=3, column=0, padx=5, pady=5)
-        self.detalles_etiqueta.grid(row=0, column=1, padx=5, pady=5)
+        self.detalles_etiqueta.grid(row=0, column=0, padx=5, pady=5)
         self.nombre_etiqueta.grid(row=0, column=0, columnspan=2, sticky="w", padx=10, pady=5)
         self.artista.grid(row=1, column=2, columnspan=2, sticky="w", padx=5, pady=5)
         self.imagen.grid(row=1, column=0, rowspan=2, columnspan=2, sticky="w", padx=10, pady=5)

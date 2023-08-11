@@ -17,7 +17,6 @@ class Vista_Eventos(CTkScrollableFrame):
         #Posición en la vista Explorar y al buscar y filtrar
         self.grid(row=2, column=0, columnspan=5, sticky="nsew", padx=2, pady=2)
         
-
     #Crea un frame ubicado dentro del frame desplegable con la info 
     #de un evento
     def crear_vista_para_evento(self, nombre_evento, descripcion, id):

@@ -25,8 +25,6 @@ class Vista_Login(CTkFrame):
         self.crear_widgets()
         self.posicion_widgets()
     
-
-
     def crear_widgets(self):
         #Frame en el que aparecerán los widgets
         self.frame_interior = CTkFrame(self, height=100,fg_color=cuerpo_color)

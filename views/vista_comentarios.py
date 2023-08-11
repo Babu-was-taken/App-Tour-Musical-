@@ -83,7 +83,6 @@ class Vista_Comentarios(CTkFrame):
         self.animo_etiqueta.grid(row=1, column=1, sticky="w", padx=5, pady=5)
         self.entrada_comentario.grid(row=3, column=0, columnspan=2, sticky="w", padx=5, pady=5)
 
-
     #Crea un frame que contenga un comentario
     def crear_vista_de_comentario(self, usuario, calificacion, animo, comentario, id):
         frame_comentario = CTkFrame(self, fg_color=cuerpo_color)
@@ -112,7 +111,6 @@ class Vista_Comentarios(CTkFrame):
         comentario_calificacion.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         comentario_animo.grid(row=1, column=0, sticky="e", padx=5, pady=5)
         comentario_comentario.grid(row=2, column=0, columnspan=2, sticky="w", padx=5, pady=5)
-
 
     #Genera frames con los comentarios que tengan el mismo id del evento seleccionado
     #Asigna el usario al comentario que tenga el mismo id_usuario
