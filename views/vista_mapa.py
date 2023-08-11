@@ -80,8 +80,7 @@ class Vista_Mapa(CTkFrame):
                                                text_color= titulo_color,
                                                font=("Open Sans",20),
                                                command=lambda: self.controlador.planificar_ruta(self.destino_1_var.get(),
-                                                                                                self.destino_2_var.get(),
-                                                                                                ))
+                                                                                                self.destino_2_var.get()))
         self.boton_quitar_ruta = CTkButton(self.frame_interior_3, text="Quitar ruta",
                                            border_width=2,
                                            fg_color=cuerpo_color,
@@ -106,7 +105,7 @@ class Vista_Mapa(CTkFrame):
                                            text_color=texto_color, font=("Open Sans",15))
 
         #Variable de contról
-        self.destino_1_var = StringVar(value=self.parent.eventos[self.controlador.ubicacion_seleccionada.id-1].nombre)
+        self.destino_1_var = StringVar(value=self.parent.eventos[self.controlador.ubicacion_seleccionada.id-1].nombre) #Usa el nombre del evento seleccionado como valor predeterminado
         self.destino_2_var = StringVar(value="Destino 2")
         
         #Option_Menu
